@@ -1,0 +1,34 @@
+---
+import Badge from "./Badge.astro";
+import Accordion from "./Accordion.astro";
+import { getEntry } from "astro:content";
+
+const faqInfo = await getEntry("faqSection", "faq");
+if (!faqInfo || !faqInfo.data.enable) return;
+const d = faqInfo.data;
+---
+<section class="section">
+  <div class="container">
+    <div class="section-container grid lg:grid-cols-2">
+      <div class="section-intro max-lg:text-center">
+        <div class="sticky top-(--header-height)">
+          <div class="flex max-lg:justify-center">
+            <Badge title={d.badge} />
+          </div>
+          <h2 class="title lg:ml-0" set:html={d.title} />
+          <p class="subtitle lg:ml-0">{d.description}</p>
+          {d.button && d.button.link && (
+            <a href={d.button.link} class="btn btn-outline mt-9">{d.button.label}</a>
+          )}
+        </div>
+      </div>
+      <div class="section-content">
+        <div class="space-y-4">
+          {d.items.map((item: any) => (
+            <Accordion title={item.question} content={item.answer} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

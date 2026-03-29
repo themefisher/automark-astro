@@ -1,0 +1,29 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  logo: string;
+  title: string;
+  isStarred: boolean;
+}
+const { logo, title, isStarred } = Astro.props;
+---
+<div class="p-8 xl:px-10 xl:py-11 border-t border-l border-text-light/5 relative">
+  <ImageMod src={logo} alt={`${title} icon`} class="mb-6 mx-auto" />
+  <h3 class="text-h5-sm font-bold mb-4 text-center">{title}</h3>
+  <p class="text-center">
+    Visualize how teams are staffed & what resources are available across.
+  </p>
+  {[
+    "top-0 left-0 -translate-x-1/2 -translate-y-1/2",
+    "top-0 right-0 translate-x-1/2 -translate-y-1/2",
+    "bottom-0 left-0 -translate-x-1/2 translate-y-1/2",
+    "bottom-0 right-0 translate-x-1/2 translate-y-1/2",
+  ].map((pos) => (
+    <svg
+      data-is-starred={String(isStarred)}
+      class={`absolute z-10 ${pos} hidden`}
+      width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.5" d="M11.5 0C11.5 0 11.3776 6.44974 13.9639 9.03606C16.5503 11.6224 23 11.5 23 11.5C23 11.5 16.5503 11.3776 13.9639 13.9639C11.3776 16.5503 11.5 23 11.5 23C11.5 23 11.6224 16.5503 9.03606 13.9639C6.44974 11.3776 0 11.5 0 11.5C0 11.5 6.44974 11.6224 9.03606 9.03606C11.6224 6.44974 11.5 0 11.5 0Z" fill="#EDEDED" />
+    </svg>
+  ))}
+</div>

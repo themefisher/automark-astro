@@ -1,0 +1,19 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  image: string;
+  name: string;
+  role: string;
+}
+const { image, name, role } = Astro.props;
+---
+<div class="text-center group">
+  <div class="relative overflow-hidden rounded-3xl mb-6 bg-text/10">
+    <ImageMod       src={image}
+      alt={name}
+      class="w-full aspect-square object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+    <div class="absolute inset-0 bg-linear-to-t from-gradient-start/60 via-transparent to-transparent opacity-100 transition-opacity duration-300 -z-10"></div>
+  </div>
+  <h4 class="text-h5-sm font-bold text-text-white mb-1">{name}</h4>
+  <p class="text-text text-sm">{role}</p>
+</div>

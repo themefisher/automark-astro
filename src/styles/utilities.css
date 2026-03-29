@@ -1,0 +1,57 @@
+
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@utility bg-gradient {
+  @apply bg-linear-to-b from-[#383838] from-[0.53%] to-transparent to-[83.28%];
+}
+
+/* form style */
+@utility form-input {
+  @apply w-full rounded-full border border-border bg-light px-7 py-5 bg-linear-to-tl from-border/40 from-40% to-body/10 text-text-light placeholder:text-text-dark focus:border-primary focus:ring-transparent;
+}
+
+@utility form-label {
+  @apply mb-4 block font-secondary text-xl font-normal text-text-dark;
+}
+
+@utility corner-squircle {
+  corner-shape: squircle;
+}
+
+@utility gradient-border {
+  background: linear-gradient(var(--color-body), var(--color-body)) padding-box,
+              linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 12px;
+  border: 4px solid transparent;
+  animation: gradientAnimation 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@utility hoverAnimationDuration {
+  animation-duration: 8s;
+
+  &:hover {
+    animation-duration: 4s;
+  }
+}
+
+@utility link {
+  @apply text-text-white hover:text-primary transition-colors duration-200 underline;
+}

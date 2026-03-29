@@ -1,0 +1,32 @@
+.btn {
+  @apply inline-block rounded-full px-8 py-3 font-normal capitalize transition cursor-pointer select-none;
+}
+
+.btn-sm {
+  @apply rounded-sm px-4 py-1.5 text-sm cursor-pointer select-none;
+}
+
+.btn-primary {
+  @apply text-white;
+  background: linear-gradient(
+    0deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-end) 100%
+  );
+
+  &:hover {
+    @apply brightness-125;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 20px var(--color-gradient-start);
+  }
+}
+
+
+.btn-outline {
+  @apply border-[1.5px] border-text text-text-light hover:bg-primary hover:border-primary bg-transparent hover:text-white transition-all duration-300;
+}
+.btn-outline:hover {
+  box-shadow: 0px 0px 15px var(--color-gradient-end);
+}
+
+

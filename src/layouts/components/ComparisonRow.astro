@@ -1,0 +1,47 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  title: string;
+  price?: string;
+  images?: string[];
+}
+const { 
+  title, 
+  price = "$99", 
+  images = [
+    "/images/platforms-logo/ableton.svg",
+    "/images/platforms-logo/airbnb.svg",
+    "/images/platforms-logo/basecamp.svg",
+    "/images/platforms-logo/docker.svg",
+    "/images/platforms-logo/dribbble.svg"
+  ]
+} = Astro.props;
+---
+<div class="relative max-lg:border max-lg:border-border max-lg:rounded-4xl max-lg:py-8 max-lg:corner-squircle">
+  <div class="flex items-center flex-col lg:flex-row lg:justify-between w-full gap-y-8">
+    <div class="bg-[#070710] border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2 max-w-70">
+      <span class="font-semibold text-text-white text-lg">{title}</span>
+    </div>
+
+    <!-- Images container — js rotates through full pool, initial 5 shown from content -->
+    <div
+      data-comparison-row-images-path={JSON.stringify(images)}
+      class="flex items-center justify-start gap-3 xl:gap-5 lg:min-w-90">
+      {images.slice(0, 5).map((src) => (
+        <ImageMod draggable="false" src={src} alt={`${title} icon`} class="max-h-12" />
+      ))}
+    </div>
+
+    <!-- Price pill -->
+    <div class="bg-[#070710] border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2 max-w-60">
+      <span class="font-normal text-text text-base">
+        <span class="text-[#FF5353] font-secondary font-bold text-h6">{price}</span>
+        {" "}/Per Month
+      </span>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 items-center -z-10 hidden xl:flex">
+    <div class="border-t border-border border-dashed w-full"></div>
+  </div>
+</div>

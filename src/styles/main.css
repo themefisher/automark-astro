@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin 'tailwind-bootstrap-grid';
+
+/* Auto-generated theme from "theme.json"*/
+@import "./generated-theme.css";
+
+/* Import Custom Fonts */
+
+@import "./variables.css";
+@import "./safe.css";
+@import "./utilities.css";
+
+@layer base {
+  @import "./base.css";
+}
+
+@layer components {
+  @import "./animations.css";
+  @import "./components.css";
+  @import "./navigation.css";
+  @import "./buttons.css";
+}

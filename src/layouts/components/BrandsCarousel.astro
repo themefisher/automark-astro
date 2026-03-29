@@ -1,0 +1,13 @@
+---
+import { getEntry } from "astro:content";
+
+const brandsInfo = await getEntry("brandsSection", "brands");
+if (!brandsInfo || !brandsInfo.data.enable) return;
+const d = brandsInfo.data;
+
+const brandUrls = d.images.map((img: any) => img.src);
+---
+<div class="flex gap-10 xl:gap-x-16 flex-wrap justify-center items-center [&>img]:lg:h-8"
+  data-trusted-brands-images={JSON.stringify(brandUrls)}>
+  <!-- Handled by script: main.js updateTrustedPartners() -->
+</div>

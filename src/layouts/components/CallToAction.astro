@@ -1,0 +1,26 @@
+---
+import Badge from "./Badge.astro";
+import { getEntry } from "astro:content";
+
+const ctaInfo = await getEntry("ctaSection", "call-to-action");
+if (!ctaInfo || !ctaInfo.data.enable) return;
+const d = ctaInfo.data;
+---
+<section class="section">
+  <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.badge} />
+        <h2 class="title hasHighlight lg:col-7" set:html={d.title} />
+        <p class="subtitle text-h6-sm lg:col-6">{d.description}</p>
+        {d.button && d.button.link && (
+          <a href={d.button.link} class="btn btn-primary mt-9">{d.button.label}</a>
+        )}
+      </div>
+    </div>
+    <div class="absolute bottom-0 right-0 size-120 xl:size-280 blur-2xl translate-x-2/5 translate-y-1/2 -z-10" style="background: radial-gradient(circle, #c4b6ff 0%, #6e4dff 10%, rgba(202, 194, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);"></div>
+    <div class="absolute top-1/2 -translate-y-1/2 h-1/2 w-full overflow-hidden">
+      <canvas class="heroSporeCanvas w-full"></canvas>
+    </div>
+  </div>
+</section>

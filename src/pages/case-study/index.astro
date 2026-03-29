@@ -1,0 +1,85 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import Badge from "@/layouts/components/Badge.astro";
+import TestimonialCard from "@/layouts/components/TestimonialCard.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import CaseStudyCard from "@/layouts/components/CaseStudyCard.astro";
+import { getEntry, getCollection } from "astro:content";
+
+const caseStudyList = await getEntry("caseStudy", "-index");
+const d = caseStudyList!.data as any;
+
+// Get all individual case study entries
+const caseStudies = await getCollection("caseStudy", ({ id }) => !id.startsWith("-index"));
+---
+
+<Base title={d.title} meta_title={d.meta_title} description={d.description}>
+
+<!-- Page Header -->
+<section class="section-ph pb-20 relative overflow-hidden">
+  <div class="container relative">
+    <div class="absolute top-0 left-0 w-full">
+      <div class="h-100 w-full overflow-hidden -translate-y-10">
+        <canvas class="heroSporeCanvas w-full"></canvas>
+      </div>
+    </div>
+    <div class="row justify-center">
+      <div class="mb-20 text-center relative">
+        <div class="flex justify-center mb-5">
+          <Badge title={d.page_header.badge} />
+        </div>
+        <h1 class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight" set:html={d.page_header.title} />
+        <p class="mb-10 lg:col-6 mx-auto text-lg">{d.page_header.content}</p>
+      </div>
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+</section>
+<hr class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0" />
+
+<!-- Case Study Cards -->
+<section class="section relative">
+  <div class="container">
+    <div class="grid gap-7 lg:gap-14">
+      {caseStudies.map((study) => (
+        <CaseStudyCard
+          href={`/case-study/${study.id}`}
+          image={study.data.hero_image!}
+          logo={study.data.logo!}
+          company={study.data.company!}
+          badge={study.data.badge!}
+          title={study.data.title}
+          description={study.data.description!}
+          stat1Value={study.data.stat1Value!}
+          stat1Label={study.data.stat1Label!}
+          stat2Value={study.data.stat2Value!}
+          stat2Label={study.data.stat2Label!}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section relative">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.testimonials.badge} />
+        <h2 class="title hasHighlight" set:html={d.testimonials.title} />
+      </div>
+      <div class="section-content">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+          {d.testimonials.items.map((item: any) => (
+            <TestimonialCard poster={item.poster} name={item.name} designation={item.designation} content={item.content} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<CallToAction />
+</Base>

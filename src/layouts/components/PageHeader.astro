@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<section class="section-ph pb-28 mb-0 overflow-hidden">
+  <div class="container">
+    <div class="lg:max-w-3xl mx-auto text-center">
+      <h1 class="hasHighlight mb-6" set:html={title} />
+      <p class="mb-5 text-lg">The specific details can vary depending on the nature of the services provided.
+However, there are several common elements that are typically included</p>
+    <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
+      <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+  <div class="absolute left-0 bottom-0 w-full h-40 -z-10 bg-linear-180 from-transparent to-body"></div>
+  <div class="absolute top-0 left-0 flex flex-col gap-6 -z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="567" height="558" fill="none">
+      <g opacity=".5">
+        <g filter="url(#a-ph)" style="mix-blend-mode:plus-lighter">
+          <path fill="url(#b-ph)" d="M-20.527-7.51 10.182-43l259.774 233.148-13.283 15.352-277.2-213.01Z" />
+        </g>
+        <g filter="url(#c-ph)" style="mix-blend-mode:plus-lighter">
+          <path fill="url(#d-ph)" d="M-52 13.659-20.788-25l267.328 224.459-13.502 16.722-285.04-202.522Z" />
+        </g>
+        <g filter="url(#e-ph)" style="mix-blend-mode:plus-lighter">
+          <path fill="url(#f-ph)" d="M-108.079-4.9-66.125-46l290.011 307.352-18.147 17.779-313.818-284.03Z" />
+        </g>
+        <g filter="url(#g-ph)">
+          <ellipse cx="143" cy="252.378" fill="#530DBB" fill-opacity=".5" rx="143" ry="252.378" transform="scale(-1 1) rotate(46.133 191.203 -117.756)" />
+        </g>
+      </g>
+      <defs>
+        <filter id="a-ph" width="338.484" height="296.5" x="-44.527" y="-67" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" />
+        </filter>
+        <filter id="c-ph" width="346.541" height="289.181" x="-76.001" y="-49" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" />
+        </filter>
+        <filter id="e-ph" width="379.965" height="373.131" x="-132.079" y="-70" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" />
+        </filter>
+        <filter id="g-ph" width="914.454" height="906.103" x="-348.178" y="-349.061" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="125" />
+        </filter>
+        <linearGradient id="b-ph" x1="-5.173" x2="258.744" y1="-25.255" y2="203.106" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7369FF" />
+          <stop offset="1" stop-color="#6971FF" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="d-ph" x1="-36.394" x2="235.144" y1="-5.671" y2="213.574" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7369FF" />
+          <stop offset="1" stop-color="#6971FF" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="f-ph" x1="-87.102" x2="208.568" y1="-25.45" y2="276.359" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#7369FF" />
+          <stop offset="1" stop-color="#6971FF" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>

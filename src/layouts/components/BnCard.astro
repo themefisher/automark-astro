@@ -1,0 +1,23 @@
+---
+interface Props {
+  image: string;
+  number: string;
+  title: string;
+  desc: string;
+}
+const { image, number, title, desc } = Astro.props;
+---
+<div class="p-8 xl:px-40 xl:py-2 relative" data-bn-card={number}>
+  <div class="flex items-center flex-col lg:flex-row lg:justify-between">
+    <img src={image} alt={`${title} icon`} class="max-h-28 max-lg:order-1" />
+    <div class="relative grid place-items-center max-lg:order-0">
+      <div class="text-[5rem] lg:text-[100px] font-extrabold t-stroke text-transparent leading-none">{number}</div>
+      <h3 class="text-h5-sm font-bold absolute">{title}</h3>
+    </div>
+    <p class="lg:col-4 text-sm max-lg:my-8 max-lg:order-3">{desc}</p>
+  </div>
+  <div class="absolute inset-0 size-full -z-10">
+    <div class="border border-border size-full rounded-t-4xl rounded-b-4xl bg-primary/5 corner-squircle"
+         style="transform: perspective(100px) rotateX(-2deg);"></div>
+  </div>
+</div>

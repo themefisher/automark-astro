@@ -1,0 +1,19 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  title: string;
+  subtitle: string;
+  image: string;
+  classNames?: string;
+}
+const { title, subtitle, image, classNames = "" } = Astro.props;
+---
+<div class={`flex flex-col justify-between relative bg-primary/5 border border-border/50 rounded-2xl overflow-hidden ${classNames}`}>
+  <div class="p-6 pt-10 text-center">
+    <h3 class="text-h5-sm text-text-white font-semibold mb-2">{title}</h3>
+    <p class="text-text text-sm leading-relaxed">{subtitle}</p>
+  </div>
+  <div class="relative flex items-center justify-center p-8">
+    <ImageMod src={image} alt={title} class="w-full object-contain" />
+  </div>
+</div>

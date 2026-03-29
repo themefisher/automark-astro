@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  content?: string;
+}
+const { title, content = "AI is a tool that enhances human capabilities rather than replacing them. It assists in automating tasks and providing insights, but human creativity and judgment remain essential." } = Astro.props;
+---
+<div class="accordion">
+  <button class="accordion-header" data-accordion>
+    {title}
+    <svg class="accordion-icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.75 5.41602H10.0833" stroke="#A6A1A9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.41663 10.083L5.41663 0.749675" class="accordion-icon-vertical-line" stroke="#A6A1A9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="accordion-content">
+    {content}
+  </div>
+</div>

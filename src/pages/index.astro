@@ -1,0 +1,453 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import Badge from "@/layouts/components/Badge.astro";
+import VpCard from "@/layouts/components/VpCard.astro";
+import FeatureCard from "@/layouts/components/FeatureCard.astro";
+import BnCard from "@/layouts/components/BnCard.astro";
+import ComparisonRow from "@/layouts/components/ComparisonRow.astro";
+import ProcessCard from "@/layouts/components/ProcessCard.astro";
+import TestimonialCard from "@/layouts/components/TestimonialCard.astro";
+import PricingCard from "@/layouts/components/PricingCard.astro";
+import GradientBlob from "@/layouts/components/GradientBlob.astro";
+import BrandsCarousel from "@/layouts/components/BrandsCarousel.astro";
+import OurStory from "@/layouts/components/OurStory.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import VideoShowcase from "@/layouts/components/VideoShowcase.astro";
+import { getEntry } from "astro:content";
+
+const homepage = await getEntry("homepage", "-index");
+const d = homepage!.data as any;
+---
+
+<Base >
+<!-- Banner -->
+<section class="section-ph relative overflow-hidden">
+  <div class="container relative">
+     <div class="absolute top-0 left-0 w-full">
+        <div class="h-100 w-full overflow-hidden -translate-y-10">
+                <canvas class="heroSporeCanvas w-full"></canvas>
+        </div>
+     </div>
+    <div class="row justify-center">
+      <div class="mb-20 text-center relative">
+        <div class="mb-5 flex justify-center">
+          <!-- hero badge -->
+        </div>
+        <h1 class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight" set:html={d.banner.title} />
+        <p class="mb-10 lg:col-6 mx-auto">{d.banner.content}</p>
+        <div class="flex gap-4 justify-center items-center flex-wrap">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href={d.banner.button_primary.link}>
+            {d.banner.button_primary.label}
+          </a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href={d.banner.button_secondary.link}>
+            {d.banner.button_secondary.label}
+          </a>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="flex justify-center w-full perspective-near xl:perspective-dramatic">
+          <VideoShowcase />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+  <div class="absolute top-0 left-0 flex flex-col gap-6 -z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="567" height="558" fill="none">
+      <g opacity=".5">
+        <g filter="url(#a-banner)" style="mix-blend-mode:plus-lighter"><path fill="url(#b-banner)" d="M-20.527-7.51 10.182-43l259.774 233.148-13.283 15.352-277.2-213.01Z" /></g>
+        <g filter="url(#c-banner)" style="mix-blend-mode:plus-lighter"><path fill="url(#d-banner)" d="M-52 13.659-20.788-25l267.328 224.459-13.502 16.722-285.04-202.522Z" /></g>
+        <g filter="url(#e-banner)" style="mix-blend-mode:plus-lighter"><path fill="url(#f-banner)" d="M-108.079-4.9-66.125-46l290.011 307.352-18.147 17.779-313.818-284.03Z" /></g>
+        <g filter="url(#g-banner)"><ellipse cx="143" cy="252.378" fill="#530DBB" fill-opacity=".5" rx="143" ry="252.378" transform="scale(-1 1) rotate(46.133 191.203 -117.756)" /></g>
+      </g>
+      <defs>
+        <filter id="a-banner" width="338.484" height="296.5" x="-44.527" y="-67" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1" stdDeviation="12" /></filter>
+        <filter id="c-banner" width="346.541" height="289.181" x="-76.001" y="-49" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1" stdDeviation="12" /></filter>
+        <filter id="e-banner" width="379.965" height="373.131" x="-132.079" y="-70" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1" stdDeviation="12" /></filter>
+        <filter id="g-banner" width="914.454" height="906.103" x="-348.178" y="-349.061" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1" stdDeviation="125" /></filter>
+        <linearGradient id="b-banner" x1="-5.173" x2="258.744" y1="-25.255" y2="203.106" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
+        <linearGradient id="d-banner" x1="-36.394" x2="235.144" y1="-5.671" y2="213.574" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
+        <linearGradient id="f-banner" x1="-87.102" x2="208.568" y1="-25.45" y2="276.359" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
+      </defs>
+    </svg>
+  </div>
+</section>
+<hr class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0" />
+
+<!-- Main Features -->
+<section class="section pt-30 xl:pt-37">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.main_features.badge} />
+        <h2 class="title hasHighlight" set:html={d.main_features.title} />
+        <p class="subtitle">{d.main_features.content}</p>
+      </div>
+      <div class="section-content">
+        <div class="feature-items-group mb-9">
+          {d.main_features.items.slice(0, 3).map((text: string) => (
+            <div class="bg-[#070710] border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2">
+              <svg class="shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99999 1.04163C14.9476 1.04163 18.9583 5.05241 18.9583 9.99996C18.9583 14.9475 14.9476 18.9583 9.99999 18.9583C5.05244 18.9583 1.04166 14.9475 1.04166 9.99996C1.04166 5.05241 5.05244 1.04163 9.99999 1.04163ZM8.02571 6.8538C7.69841 6.58685 7.2159 6.6057 6.9108 6.91077C6.60581 7.21587 6.5869 7.6984 6.85383 8.02568L6.9108 8.08915L8.82157 9.99996L6.91161 11.9108C6.5863 12.2362 6.58619 12.7638 6.91161 13.0891C7.23705 13.4143 7.76464 13.4145 8.09 13.0891L9.99999 11.1784L11.91 13.0891L11.9735 13.1461C12.3007 13.413 12.7832 13.394 13.0884 13.0891C13.3934 12.7842 13.4128 12.3015 13.1462 11.9742L13.0884 11.9108L11.1776 9.99996L13.0892 8.08915L13.1462 8.02568C13.4131 7.69839 13.3942 7.21587 13.0892 6.91077C12.7841 6.6057 12.3016 6.58685 11.9742 6.8538L11.9108 6.91077L9.99999 8.82154L8.08918 6.91077L8.02571 6.8538Z" fill="#FF5353" />
+              </svg>
+              <span class="font-semibold text-text-white text-lg">{text}</span>
+            </div>
+          ))}
+        </div>
+        <div class="feature-items-group">
+          {d.main_features.items.slice(3).map((text: string) => (
+            <div class="bg-[#070710] border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2">
+              <svg class="shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99999 1.04163C14.9476 1.04163 18.9583 5.05241 18.9583 9.99996C18.9583 14.9475 14.9476 18.9583 9.99999 18.9583C5.05244 18.9583 1.04166 14.9475 1.04166 9.99996C1.04166 5.05241 5.05244 1.04163 9.99999 1.04163ZM8.02571 6.8538C7.69841 6.58685 7.2159 6.6057 6.9108 6.91077C6.60581 7.21587 6.5869 7.6984 6.85383 8.02568L6.9108 8.08915L8.82157 9.99996L6.91161 11.9108C6.5863 12.2362 6.58619 12.7638 6.91161 13.0891C7.23705 13.4143 7.76464 13.4145 8.09 13.0891L9.99999 11.1784L11.91 13.0891L11.9735 13.1461C12.3007 13.413 12.7832 13.394 13.0884 13.0891C13.3934 12.7842 13.4128 12.3015 13.1462 11.9742L13.0884 11.9108L11.1776 9.99996L13.0892 8.08915L13.1462 8.02568C13.4131 7.69839 13.3942 7.21587 13.0892 6.91077C12.7841 6.6057 12.3016 6.58685 11.9742 6.8538L11.9108 6.91077L9.99999 8.82154L8.08918 6.91077L8.02571 6.8538Z" fill="#FF5353" />
+              </svg>
+              <span class="font-semibold text-text-white text-lg">{text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Value Proposition -->
+<section class="section relative overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.value_props.badge} />
+        <h2 class="title hasHighlight" set:html={d.value_props.title} />
+        <p class="subtitle">{d.value_props.content}</p>
+      </div>
+      <div class="section-content">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-9">
+          {d.value_props.items.map((item: any) => (
+            <VpCard logo={item.logo} title={item.title} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <GradientBlob />
+</section>
+
+<!-- Features -->
+<section class="section-box mx-5 relative isolate overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.our_features.badge} />
+        <h2 class="title hasHighlight" set:html={d.our_features.title} />
+        <p class="subtitle">{d.our_features.content}</p>
+      </div>
+      <div class="section-content">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 border-r border-text-light/5 border-b">
+          {d.our_features.items.map((item: any) => (
+            <FeatureCard logo={item.logo} title={item.title} isStarred={item.isStarred} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 -z-10">
+    <svg width="1880" height="706" viewBox="0 0 1880 706" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_f_feat)">
+    <path d="M265 598.973C173.931 658.402 -22.5806 807.13 -125 857.275V910H1750C1691.94 910 1142.76 643.191 986.456 530.174C472.864 158.816 488.018 453.438 265 598.973Z" fill="url(#paint0_linear_feat)"/>
+    </g>
+    <defs>
+    <filter id="filter0_f_feat" x="-475" y="0" width="2575" height="1260" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="175" result="effect1"/></filter>
+    <linearGradient id="paint0_linear_feat" x1="641.165" y1="334" x2="641.165" y2="909.999" gradientUnits="userSpaceOnUse"><stop stop-color="#6421FF"/><stop offset="1" stop-color="#7345FF"/></linearGradient>
+    </defs>
+    </svg>
+  </div>
+</section>
+
+<!-- Business Needs -->
+<section class="section relative isolate overflow-x-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.business_needs.badge} />
+        <h2 class="title hasHighlight" set:html={d.business_needs.title} />
+      </div>
+      <div class="section-content">
+        <div class="flex flex-col gap-y-2 px-4">
+          {d.business_needs.items.map((item: any) => (
+            <BnCard image={item.image} number={item.number} title={item.title} desc={item.desc} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0 grid place-items-center size-full -z-10">
+    <div class="size-225 bg-radial from-gradient-end/30 to-transparent from-0% to-70% rounded-full"></div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="section relative isolate overflow-x-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.comparisons.badge} />
+        <h2 class="title hasHighlight" set:html={d.comparisons.title} />
+      </div>
+      <div class="section-content">
+        <div class="flex flex-col gap-y-5 px-4">
+          {d.comparisons.items.map((item: any) => (
+            <ComparisonRow title={item.title} price={item.price} images={item.images} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0 grid place-items-center size-full -z-10">
+    <div class="size-225 bg-radial from-gradient-start/30 to-transparent from-0% to-70% rounded-full"></div>
+  </div>
+</section>
+
+<!-- Testimonial Quote -->
+<section class="section overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.testimonial_quote.badge} />
+        <h2 class="title hasHighlight" set:html={d.testimonial_quote.title} />
+      </div>
+      <div class="section-content">
+        <hr class="h-px bg-linear-to-r from-transparent from-5% via-text-white/40 to-95% to-transparent border-0" />
+        <div class="relative max-w-220 mx-auto">
+          <blockquote class="text-center text-h6 text-text-white p-6 xl:p-10 xl:px-15 border-x border-text/20">
+            "{d.testimonial_quote.quote}"
+          </blockquote>
+          <div class="size-2 bg-text-white absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2"></div>
+          <div class="size-2 bg-text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2"></div>
+          <div class="size-2 bg-text-white absolute left-0 bottom-0 -translate-x-1/2 translate-y-1/2"></div>
+          <div class="size-2 bg-text-white absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        <hr class="h-px bg-linear-to-r from-transparent from-5% via-text-white/40 to-95% to-transparent border-0" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Partners -->
+<section class="section overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.our_partners.badge} />
+        <p class="subtitle hasHighlight" set:html={d.our_partners.title} />
+      </div>
+      <div class="section-content">
+        <BrandsCarousel />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Single Testimonial -->
+<section class="section relative max-lg:overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-content">
+        <div class="row g-4 items-center">
+          <div class="lg:col-5">
+            <div class="flex flex-col">
+              {d.single_testimonial.stats.map((stat: any, i: number) => (
+                <div class={`blob-message relative z-${i + 1} ${i === 1 ? 'lg:w-10/12' : ''}`}>
+                  <span class="font-semibold text-text-white">{stat.value}</span> {stat.label}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="lg:col-7 max-lg:mt-10">
+            <div class="rounded-4xl corner-squircle bg-light px-7 py-10">
+              <div class="text-text-white">
+                <svg width="45" height="28" viewBox="0 0 45 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.3955 0V10.9561H24.8691L16.5791 28H0L13.0264 0H15.3955ZM36.7109 0V10.9561H45L36.7109 28H21.3154L34.3418 0H36.7109Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <blockquote class="mt-10 text-h6 text-text-white">
+                {d.single_testimonial.testimonial.quote}
+              </blockquote>
+              <div class="mt-12.5 flex items-center">
+                <div class="text-text-dark">
+                  <ImageMod height={50} width={50} class="rounded-full size-12" src={d.single_testimonial.testimonial.avatar} alt={d.single_testimonial.testimonial.name} />
+                </div>
+                <div class="ml-2.5">
+                  <h3 class="text-base font-primary font-semibold">{d.single_testimonial.testimonial.name}</h3>
+                  <p class="text-text-dark">{d.single_testimonial.testimonial.company}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute top-0 lg:bottom-0 grid place-items-center size-full lg:translate-y-20 -z-10">
+    <div class="size-180 xl:size-300 bg-radial from-gradient-start/60 to-transparent from-0% to-70% rounded-full"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-180">
+      <div class="h-100 w-full overflow-hidden">
+        <canvas class="heroSporeCanvas w-full"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Growth Process -->
+<section class="section-box max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.growth_process.badge} />
+        <h2 class="title hasHighlight" set:html={d.growth_process.title} />
+      </div>
+      <div class="section-content">
+        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-16">
+          {d.growth_process.items.map((item: any) => (
+            <ProcessCard logo={item.logo} title={item.title} />
+          ))}
+        </div>
+        <div class="flex justify-center mt-10 xl:mt-18">
+          <a href={d.growth_process.button.link} class="btn btn-primary">{d.growth_process.button.label}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-x-0 top-0 -z-10">
+    <svg class="w-full" viewBox="0 0 1920 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M960 1.5C1224.88 1.5 1464.62 62.943 1638.08 162.205C1811.58 261.491 1918.5 398.425 1918.5 549.356C1918.5 700.287 1811.58 837.222 1638.08 936.508C1464.62 1035.77 1224.88 1097.21 960 1097.21C695.116 1097.21 455.383 1035.77 281.923 936.508C108.42 837.222 1.50012 700.287 1.5 549.356C1.5 398.425 108.42 261.491 281.923 162.205C455.383 62.943 695.116 1.5 960 1.5Z" fill="black" stroke="url(#paint0_linear_proc)" stroke-width="3"/>
+    <defs>
+    <linearGradient id="paint0_linear_proc" x1="960" y1="0" x2="960" y2="84.3521" gradientUnits="userSpaceOnUse"><stop stop-color="#6833D9"/><stop offset="1" stop-color="#060411"/></linearGradient>
+    </defs>
+    </svg>
+  </div>
+  <div class="absolute inset-0 grid place-items-center size-full -z-10">
+    <div class="size-225 bg-radial from-gradient-start/30 to-transparent from-0% to-70% rounded-full"></div>
+  </div>
+</section>
+
+<!-- Our Thought / CEO Letter -->
+<OurStory />
+
+<!-- Integrations -->
+<section class="section relative isolate max-md:overflow-hidden">
+  <div class="container-sm">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.integrations.badge} />
+        <h2 class="title hasHighlight" set:html={d.integrations.title} />
+      </div>
+      <div class="section-content">
+        <div class="flex items-center justify-center flex-wrap [&>div]:-ml-5">
+          {d.integrations.items.map((item: any) => (
+            <div class="size-35 bg-text-light/10 backdrop-blur-xl rounded-full grid place-items-center">
+              <ImageMod src={item.image} alt={item.alt} class="max-h-14 object-contain" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0 grid place-items-center size-full -z-10">
+    <div class="size-180 xl:size-225 bg-radial from-gradient-start/40 to-transparent from-0% to-70% rounded-full"></div>
+  </div>
+</section>
+
+<!-- Lead Generation -->
+<section class="section-box bg-transparent my-0">
+  <div class="container-sm">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.lead_generation.badge} />
+        <h2 class="title hasHighlight" set:html={d.lead_generation.title} />
+      </div>
+      <div class="section-content">
+        <div class="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10">
+          <div class="lg:w-6/12">
+            <h3 class="text-h5-sm font-bold mb-7">{d.lead_generation.heading}</h3>
+            <p set:html={d.lead_generation.p1} />
+            <br>
+            <p set:html={d.lead_generation.p2} />
+            <ul class="green-tick-list [&>li]:mb-8 mt-10">
+              {d.lead_generation.list.map((item: string) => (
+                <li set:html={item} />
+              ))}
+            </ul>
+          </div>
+          <div class="lg:w-6/12">
+            <div class="bg-light rounded-4xl corner-squircle p-10 xl:px-7.5 xl:py-10">
+              <ImageMod src={d.lead_generation.image} width={307} height={190} alt="ebook" class="w-full max-w-76.75 mx-auto mb-12">
+              <form action="#" class="">
+                <div class="form-control">
+                  <input type="text" name="name" placeholder="Name" class="form-input w-full mb-5" required>
+                  <input type="email" name="email" placeholder="Email Address" class="form-input w-full mb-5" required>
+                  <button type="submit" class="btn btn-primary w-full">{d.lead_generation.button_label}</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0" />
+
+<!-- Pricing -->
+<section class="section-box my-0 bg-transparent" id="pricing">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.pricing.badge} />
+        <h2 class="title hasHighlight" set:html={d.pricing.title} />
+        <p>{d.pricing.content}</p>
+      </div>
+      <div class="section-content">
+        <div class="pricing-container">
+          <div class="price-togger">
+            <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
+            <label for="pricing-toggle" class="price-toggler-btn active">Monthly</label>
+            <label for="pricing-toggle" class="price-toggler-btn">Yearly</label>
+          </div>
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+            {d.pricing.plans.map((plan: any) => (
+              <PricingCard price={plan.price} yearly_price={plan.yearly_price} title={plan.title} isFeatured={plan.isFeatured} />
+            ))}
+          </div>
+        </div>
+        <GradientBlob />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section pt-0 bg-transparent">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <Badge title={d.testimonials.badge} />
+        <h2 class="title hasHighlight" set:html={d.testimonials.title} />
+        <p>{d.testimonials.content}</p>
+      </div>
+      <div class="section-content">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+          {d.testimonials.items.map((item: any) => (
+            <TestimonialCard poster={item.poster} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<Faq />
+
+<!-- Call to Action -->
+<CallToAction />
+</Base>
