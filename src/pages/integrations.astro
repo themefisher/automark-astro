@@ -1,0 +1,46 @@
+---
+import Base from "@/layouts/Base.astro";
+import IntegrationCard from "@/layouts/components/IntegrationCard.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import { getEntry } from "astro:content";
+
+const data = await getEntry("integrations", "-index");
+const d = data!.data as any;
+---
+
+<Base title={d.title} meta_title={d.meta_title} description={d.description ?? ""}>
+
+<!-- Page Header -->
+<section class="section-ph pb-10 relative ">
+  <div class="container relative">
+    <div class="absolute top-0 left-0 w-full">
+      <div class="h-100 w-full overflow-hidden -translate-y-10">
+        <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+      </div>
+    </div>
+    <div class="lg:max-w-4xl mx-auto text-center relative z-10">
+      <h1 class="hasHighlight mb-0" set:html={d.page_header.title} />
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+</section>
+
+<!-- Integrations Grid -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      {d.integrations.map((item: any) => (
+        <IntegrationCard icon={item.icon} title={item.title} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<Faq />
+
+<!-- Call to Action -->
+<CallToAction />
+
+</Base>

@@ -1,0 +1,39 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  tag: string;
+  title: string;
+  description: string;
+  authorImage: string;
+  authorName: string;
+  date: string;
+  readTime: string;
+  href: string;
+}
+const { tag, title, description, authorImage, authorName, date, readTime, href } = Astro.props;
+---
+<article class="rounded-2xl border border-text-white/15 bg-linear-[114deg] from-transparent from-5% to-[#1B275826] to-[86%] p-6 md:p-9">
+  <div class="mb-7 inline-flex rounded-[10px] bg-white px-2 py-1.5 text-sm leading-5 text-[#111111]">{tag}</div>
+
+  <a href={href}>
+    <h2 class="mb-4 text-h4-sm md:text-h4 leading-[1.2] text-text-white">{title}</h2>
+  </a>
+  <p class="mb-11 text-h6-sm md:text-xl text-text-dark leading-8">{description}</p>
+
+  <hr class="mb-6 h-px border-0 bg-linear-to-r from-transparent via-text-white/10 to-transparent" />
+
+  <div class="flex flex-wrap items-center lg:justify-between gap-x-6 gap-y-3 text-text text-sm md:text-base">
+    <span class="inline-flex items-center gap-2">
+      <ImageMod src={authorImage} width={24} height={24} class="size-6 rounded-full" alt={authorName} />
+      {authorName}
+    </span>
+    <span class="inline-flex items-center gap-2">
+      <i class="fa-regular fa-calendar-days text-sm" aria-hidden="true"></i>
+      {date}
+    </span>
+    <span class="inline-flex items-center gap-2">
+      <i class="fa-regular fa-clock text-sm" aria-hidden="true"></i>
+      {readTime}
+    </span>
+  </div>
+</article>

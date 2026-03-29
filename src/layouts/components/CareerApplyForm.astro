@@ -1,0 +1,40 @@
+---
+// Sticky application form for career detail pages
+---
+<div class="bg-text-white/5 rounded-2xl p-8 xl:py-10 border border-border/50 backdrop-blur-sm sticky top-26">
+  <h3 class="text-h4 font-bold text-text-white mb-8">Apply for position</h3>
+
+  <form class="space-y-5">
+    <!-- Name Input -->
+    <div>
+      <input type="text" placeholder="Name" class="form-input w-full" />
+    </div>
+
+    <!-- Email Input -->
+    <div>
+      <input type="email" placeholder="Email Address" class="form-input w-full" />
+    </div>
+
+    <!-- CV Upload -->
+    <div>
+      <label class="block w-full cursor-pointer">
+        <input type="file" class="hidden" accept=".pdf,.doc,.docx" name="cv" />
+        <div class="form-input rounded-2xl! border border-dashed border-border px-6 py-4 flex items-center gap-3 transition hover:border-primary">
+          <svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="text-text-white font-medium">Upload CV file</span>
+          <span class="text-text text-sm">or drag and drop</span>
+        </div>
+      </label>
+    </div>
+
+    <!-- Why Applying -->
+    <div>
+      <textarea placeholder="Why are you applying?" class="form-input rounded-2xl! w-full resize-none" rows="4"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-full">Apply Now</button>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+---
+import ImageMod from "@/layouts/components/ImageMod.astro";
+interface Props {
+  image: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+  authorImage: string;
+  authorName: string;
+  date: string;
+  href: string;
+  cardClass?: string;
+}
+const { image, imageAlt, title, description, authorImage, authorName, date, href, cardClass = "" } = Astro.props;
+---
+<article class="flex flex-col justify-between">
+  <ImageMod
+    src={image}
+    alt={imageAlt}
+    width={600}
+    height={310}
+    class="w-full min-h-77.5 object-cover rounded-2xl mb-2.5"
+  />
+  <div class={`rounded-2xl overflow-hidden bg-text-light/5 p-6 h-full flex flex-col justify-between ${cardClass}`}>
+    <div>
+      <a href={href} class="hover:!text-primary hover:underline">
+        <h3 class="mb-3 text-h5-sm text-text-white">{title}</h3>
+      </a>
+      <p class="mb-5 text-sm leading-6 text-text">{description}</p>
+    </div>
+    <div>
+      <hr class="mb-4 h-px border-0 bg-linear-to-r from-transparent via-text-white/10 to-transparent" />
+      <div class="flex items-center justify-between gap-2 text-sm text-text">
+        <span class="inline-flex items-center gap-2">
+          <ImageMod src={authorImage} width={20} height={20} class="size-5 rounded-full" alt={authorName} />
+          {authorName}
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-regular fa-calendar-days text-xs" aria-hidden="true"></i>
+          {date}
+        </span>
+      </div>
+    </div>
+  </div>
+</article>

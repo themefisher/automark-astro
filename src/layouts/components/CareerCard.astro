@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  type: string;
+  location: string;
+  href: string;
+}
+const { title, description, type, location, href } = Astro.props;
+---
+<div class="bg-text-white/5 rounded-2xl p-8 border border-border/50 backdrop-blur-sm">
+  <div class="flex flex-col gap-4 mb-6">
+    <h3 class="text-h5 font-bold text-text-white">
+      <a href={href} class="hover:text-primary transition-colors duration-200">{title}</a>
+    </h3>
+    <p class="text-text leading-relaxed">{description}</p>
+  </div>
+
+  <hr class="border-border/50 mb-6" />
+
+  <div class="flex items-center justify-between">
+    <div class="flex gap-9">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 11h18M5 11v8a2 2 0 002 2h10a2 2 0 002-2v-8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="text-text text-base">{type}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 13a3 3 0 100-6 3 3 0 000 6z" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12 22s8-7 8-12a8 8 0 10-16 0c0 5 8 12 8 12z" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="text-text text-base">{location}</span>
+      </div>
+    </div>
+    <a href={href} class="btn btn-outline text-sm px-6 py-3">Apply Now</a>
+  </div>
+</div>

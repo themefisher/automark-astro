@@ -1,0 +1,134 @@
+---
+import Base from "@/layouts/Base.astro";
+import GhlBlogCard from "@/layouts/components/GhlBlogCard.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import { getCollection, render } from "astro:content";
+import dateFormat from "@/lib/utils/dateFormat";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ id }) => !id.startsWith("-index"));
+  return posts.map((post) => ({
+    params: { single: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const d = post.data;
+const { Content } = await render(post);
+
+// Related posts
+const allPosts = await getCollection("blog", ({ id }) => !id.startsWith("-index") && id !== post.id);
+const related = allPosts.slice(0, 3);
+---
+
+<Base title={d.title} meta_title={d.meta_title ?? d.title} description={d.description ?? ""}>
+
+<!-- Blog Single Hero -->
+<section class="section-ph relative  pb-10 lg:pb-14">
+  <div class="container">
+    <div class="mx-auto max-w-246.25 text-center">
+      <h1 class="hasHighlight mb-8 text-h4-sm md:text-h1 leading-[1.1]" set:html={d.title} />
+
+      <div class="overflow-hidden rounded-2xl border border-text-white/10">
+        <ImageMod
+          src={d.image ?? "/images/blog/featured-cover.png"}
+          alt={d.title}
+          width={1200}
+          height={600}
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <div class="mx-auto mt-6 flex max-w-[560px] flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm md:text-base text-text">
+        <span class="inline-flex items-center gap-2">
+          <ImageMod
+            src={d.author_image ?? "/images/blog/author-1.png"}
+            width={24}
+            height={24}
+            class="size-6 rounded-full"
+            alt={d.author}
+          />
+          {d.author}
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-regular fa-calendar-days text-xs" aria-hidden="true"></i>
+          {dateFormat(d.date ?? new Date())}
+        </span>
+        {d.read_time && (
+          <span class="inline-flex items-center gap-2">
+            <i class="fa-regular fa-clock text-xs" aria-hidden="true"></i>
+            {d.read_time}
+          </span>
+        )}
+      </div>
+
+      <hr class="mt-8 h-px border-0 bg-linear-to-r from-transparent via-text-white/15 to-transparent" />
+    </div>
+  </div>
+
+  <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
+    <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+  </div>
+  <div class="absolute left-1/2 top-0 -z-20 size-170 -translate-x-1/2 -translate-y-1/2 blur-2xl xl:size-300" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+  <div class="absolute bottom-0 left-0 h-40 w-full -z-10 bg-linear-180 from-transparent to-body"></div>
+</section>
+
+<!-- Article Content -->
+<section class="section">
+  <div class="container">
+    <div class="mx-auto flex max-w-[1290px] flex-col gap-20">
+      <article>
+        <div class="content">
+          <Content />
+        </div>
+      </article>
+
+      <!-- Share -->
+      <div class="flex flex-wrap items-center gap-6 md:gap-8">
+        <h4 class="text-h5 md:text-h4 mb-0">Share article:</h4>
+        <div class="flex items-center gap-4">
+          <a href="#" class="size-9 rounded-full bg-white text-primary hover:bg-primary hover:text-text-light grid place-items-center transition-colors" aria-label="share on facebook">
+            <i class="fa-brands fa-facebook-f text-lg"></i>
+          </a>
+          <a href="#" class="size-9 rounded-full bg-white text-primary hover:bg-primary hover:text-text-light grid place-items-center transition-colors" aria-label="share on linkedin">
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
+          </a>
+          <a href="#" class="size-9 rounded-full bg-white text-primary hover:bg-primary hover:text-text-light grid place-items-center transition-colors" aria-label="share on reddit">
+            <i class="fa-brands fa-reddit-alien text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Read More -->
+{related.length > 0 && (
+  <section class="section pb-34">
+    <div class="container relative isolate">
+      <div class="mb-12 text-center">
+        <h2 class="text-h3-sm md:text-h2 capitalize">Read More Articles</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {related.map((relPost) => (
+          <GhlBlogCard
+            image={relPost.data.image ?? "/images/blog/post-1.png"}
+            imageAlt={relPost.data.title}
+            title={relPost.data.title}
+            description={relPost.data.description ?? ""}
+            authorImage={relPost.data.author_image ?? "/images/blog/author-1.png"}
+            authorName={relPost.data.author}
+            date={dateFormat(relPost.data.date ?? new Date())}
+            href={`/blog/${relPost.id}`}
+          />
+        ))}
+      </div>
+
+      <div class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[1242px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-radial from-primary/16 from-0% to-transparent to-70% blur-2xl"></div>
+    </div>
+  </section>
+)}
+
+</Base>

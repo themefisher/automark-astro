@@ -1,7 +1,12 @@
 ---
-title: "Blog Posts"
-meta_title: ""
-description: "this is meta description"
-image: ""
+title: "Blog"
+meta_title: "Blog - AutoMark"
+description: "Stay informed with the latest news, insights and guides from AutoMark on AI-driven marketing automation."
 draft: false
+
+page_header:
+  title: "Stay Informed With Our <strong>Latest News</strong>"
+  featured_post: "human-touch-ai-marketing"
+
+latest_section_title: "Latest Content From Us"
 ---

@@ -1,0 +1,43 @@
+---
+title: "Integrations"
+meta_title: "Integrations - AutoMark"
+description: "Seamlessly connect AutoMark with your favorite tools and platforms."
+draft: false
+
+page_header:
+  title: "Seamlessly Connect With <strong>Your Favorite Tools</strong>"
+
+integrations:
+  - icon: "fa-brands fa-google text-[#4285F4]"
+    title: "Google Workspace"
+  - icon: "fa-regular fa-calendar-check text-[#006BFF]"
+    title: "Calendly"
+  - icon: "fa-brands fa-mailchimp text-[#FFE01B]"
+    title: "Mailchimp"
+  - icon: "fa-solid fa-video text-[#2D8CFF]"
+    title: "Zoom"
+  - icon: "fa-brands fa-facebook text-[#1877F2]"
+    title: "Facebook"
+  - icon: "fa-brands fa-linkedin text-[#0A66C2]"
+    title: "LinkedIn"
+  - icon: "fa-brands fa-google text-[#4285F4]"
+    title: "Google Ads"
+  - icon: "fa-solid fa-file-invoice-dollar text-[#2CA01C]"
+    title: "QuickBooks"
+  - icon: "fa-brands fa-tiktok text-white"
+    title: "TikTok"
+  - icon: "fa-brands fa-instagram text-[#E4405F]"
+    title: "Instagram"
+  - icon: "fa-brands fa-shopify text-[#96BF48]"
+    title: "Shopify"
+  - icon: "fa-brands fa-slack text-[#4A154B]"
+    title: "Slack"
+  - icon: "fa-solid fa-users-gear text-primary"
+    title: "Custom CRMs"
+  - icon: "fa-solid fa-chart-line text-primary"
+    title: "Internal Dashboards"
+  - icon: "fa-solid fa-code text-primary"
+    title: "Private APIs"
+  - icon: "fa-solid fa-webhook text-primary"
+    title: "Webhook Systems"
+---

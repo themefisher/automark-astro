@@ -16,8 +16,11 @@ const blogCollection = defineCollection({
   schema: z.object({
     ...commonFields,
     author: z.string().default("Admin"),
+    author_image: z.string().optional(),
     categories: z.array(z.string()).default(() => ["others"]),
     tags: z.array(z.string()).default(() => ["others"]),
+    tag: z.string().optional(),
+    read_time: z.string().optional(),
   }),
 });
 
@@ -124,7 +127,42 @@ const caseStudyCollection = defineCollection({
   })
 });
 
-// Shared Sections
+const careersCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/careers" }),
+  schema: z.object({
+    ...commonFields,
+    // index-level fields
+    page_header: z.object({ title: z.string() }).optional(),
+    gallery: z.array(z.object({ src: z.string(), alt: z.string(), class: z.string().optional() })).optional(),
+    what_we_offer: z.object({ title: z.string(), subtitle: z.string() }).optional(),
+    offers: z.array(z.object({ logo: z.string(), title: z.string() })).optional(),
+    staff_testimonials: z.array(z.object({ quote: z.string(), avatar: z.string(), name: z.string(), designation: z.string() })).optional(),
+    // individual job fields
+    type: z.string().optional(),
+    location: z.string().optional(),
+    hero_image: z.string().optional(),
+    meta: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+  }),
+});
+
+const integrationsCollection = defineCollection({
+  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/integrations" }),
+  schema: z.object({
+    ...commonFields,
+    page_header: z.object({ title: z.string() }),
+    integrations: z.array(z.object({ icon: z.string(), title: z.string() })),
+  }),
+});
+
+const blogIndexCollection = defineCollection({
+  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/blog" }),
+  schema: z.object({
+    ...commonFields,
+    page_header: z.object({ title: z.string(), featured_post: z.string().optional() }).optional(),
+    latest_section_title: z.string().optional(),
+  }),
+});
+
 const ctaSectionCollection = defineCollection({
   loader: glob({ pattern: "call-to-action.{md,mdx}", base: "src/content/sections" }),
   schema: z.object({ enable: z.boolean(), badge: z.string(), title: z.string(), description: z.string(), button: z.object({ label: z.string(), link: z.string() }) })
@@ -152,6 +190,7 @@ const testimonialSectionCollection = defineCollection({
 
 export const collections = {
   blog: blogCollection,
+  blogIndex: blogIndexCollection,
   authors: authorsCollection,
   pages: pagesCollection,
   about: aboutCollection,
@@ -160,6 +199,8 @@ export const collections = {
   features: featuresCollection,
   pricing: pricingCollection,
   caseStudy: caseStudyCollection,
+  careers: careersCollection,
+  integrations: integrationsCollection,
   ctaSection: ctaSectionCollection,
   faqSection: faqSectionCollection,
   brandsSection: brandsSectionCollection,

@@ -1,0 +1,161 @@
+---
+import Base from "@/layouts/Base.astro";
+import CareerCard from "@/layouts/components/CareerCard.astro";
+import VpCard from "@/layouts/components/VpCard.astro";
+import GradientBlob from "@/layouts/components/GradientBlob.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import { getCollection, getEntry } from "astro:content";
+
+// Page-level content from content collection
+const careersIndex = await getEntry("careers", "-index");
+const d = careersIndex!.data as any;
+
+// Individual job listings
+const jobs = await getCollection("careers", ({ id }) => !id.startsWith("-index"));
+---
+
+<Base title={d.title} meta_title={d.meta_title ?? d.title} description={d.description ?? ""}>
+
+<!-- Page Header -->
+<section class="section-ph pb-16 relative ">
+  <div class="container relative">
+    <div class="absolute top-0 left-0 w-full">
+      <div class="h-100 w-full overflow-hidden -translate-y-10">
+        <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+      </div>
+    </div>
+    <div class="lg:max-w-4xl mx-auto text-center relative z-10">
+      <h1 class="hasHighlight mb-0" set:html={d.page_header.title} />
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+</section>
+
+<!-- Hero Content — Office Gallery -->
+<section class="section pt-0">
+  <div class="container text-center">
+    <a href="#open-roles" class="btn btn-primary">View Open Roles</a>
+
+    <!-- Office Gallery — from content collection -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto mt-10">
+      {d.gallery?.map((img: any) => (
+        <div class={`rounded-2xl overflow-hidden ${img.class ?? ""}`}>
+          <ImageMod
+            src={img.src}
+            alt={img.alt}
+            width={600}
+            height={625}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+  <hr class="h-px bg-linear-to-r from-transparent from-3% via-text-white/40 to-97% to-transparent border-0 my-20" />
+</section>
+
+<!-- What We Offer -->
+<section class="section relative">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <h2 class="title hasHighlight">{d.what_we_offer?.title ?? "What We Offer"}</h2>
+        <p class="subtitle">{d.what_we_offer?.subtitle}</p>
+      </div>
+      <div class="section-content">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-9">
+          {d.offers?.map((offer: any) => (
+            <VpCard logo={offer.logo} title={offer.title} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <GradientBlob />
+</section>
+
+<!-- What Our Staff Say -->
+<section class="section relative max-lg:overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <h2 class="title">What Our Staff Say</h2>
+      </div>
+      <div class="section-content">
+        <div class="grid lg:grid-cols-2 gap-8">
+          {d.staff_testimonials?.map((t: any) => (
+            <div class="rounded-2xl border border-text-white/15 bg-linear-[114deg] from-transparent from-5% to-[#1B275826] to-86% p-8 md:p-10">
+              <blockquote class="text-text leading-relaxed mb-8">{t.quote}</blockquote>
+              <div class="flex items-center gap-4">
+                <ImageMod src={t.avatar} alt={t.name} width={48} height={48} class="size-12 rounded-full object-cover" />
+                <div>
+                  <p class="text-text-white font-semibold">{t.name}</p>
+                  <p class="text-text text-sm">{t.designation}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute top-0 lg:bottom-0 grid place-items-center size-full lg:translate-y-20 -z-10">
+    <div class="size-180 xl:size-300 bg-radial from-gradient-start/60 to-transparent from-0% to-70% rounded-full"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-180">
+      <div class="h-100 w-full overflow-hidden">
+        <canvas class="heroSporeCanvas w-full"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open Positions -->
+<section id="open-roles" class="section-box max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden">
+  <div class="container">
+    <div class="section-container">
+      <div class="section-intro centralize">
+        <h2 class="title hasHighlight">
+          Open <strong class="italic">Positions</strong>
+        </h2>
+      </div>
+      <div class="section-content">
+        <div class="grid lg:grid-cols-2 gap-8">
+          {jobs.map((job) => (
+            <CareerCard
+              title={job.data.title}
+              description={job.data.description ?? ""}
+              type={job.data.type ?? "Full time"}
+              location={job.data.location ?? "Remote"}
+              href={`/careers/${job.id}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background oval ring -->
+  <div class="absolute inset-x-0 top-0 -z-10">
+    <svg class="w-full" viewBox="0 0 1920 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M960 1.5C1224.88 1.5 1464.62 62.943 1638.08 162.205C1811.58 261.491 1918.5 398.425 1918.5 549.356C1918.5 700.287 1811.58 837.222 1638.08 936.508C1464.62 1035.77 1224.88 1097.21 960 1097.21C695.116 1097.21 455.383 1035.77 281.923 936.508C108.42 837.222 1.50012 700.287 1.5 549.356C1.5 398.425 108.42 261.491 281.923 162.205C455.383 62.943 695.116 1.5 960 1.5Z" fill="black" stroke="url(#paint0_linear_car)" stroke-width="3" />
+      <defs>
+        <linearGradient id="paint0_linear_car" x1="960" y1="0" x2="960" y2="84.3521" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#6833D9" />
+          <stop offset="1" stop-color="#060411" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="absolute inset-0 grid place-items-center size-full -z-10">
+    <div class="size-225 bg-radial from-gradient-start/30 to-transparent from-0% to-70% rounded-full"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<Faq />
+
+<!-- Call to Action -->
+<CallToAction />
+
+</Base>

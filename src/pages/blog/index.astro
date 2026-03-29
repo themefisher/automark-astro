@@ -1,0 +1,107 @@
+---
+import Base from "@/layouts/Base.astro";
+import GhlBlogCard from "@/layouts/components/GhlBlogCard.astro";
+import GhlBlogFeaturedCard from "@/layouts/components/GhlBlogFeaturedCard.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import { getCollection, getEntry } from "astro:content";
+import dateFormat from "@/lib/utils/dateFormat";
+
+// Page-level content from content collection
+const blogIndex = await getEntry("blogIndex", "-index");
+const d = blogIndex!.data as any;
+
+// All blog posts (exclude the index file)
+const allPosts = await getCollection("blog", ({ id }) => !id.startsWith("-index"));
+const posts = allPosts.sort((a, b) => {
+  const aDate = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const bDate = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return bDate - aDate;
+});
+
+// Featured post: use the one specified in content, fallback to first
+const featuredId = d.page_header?.featured_post;
+const featured = featuredId
+  ? posts.find((p) => p.id === featuredId) ?? posts[0]
+  : posts[0];
+const latestPosts = posts.filter((p) => p.id !== featured.id);
+---
+
+<Base title={d.title} meta_title={d.meta_title ?? d.title} description={d.description ?? ""}>
+
+<!-- Page Header -->
+<section class="section-ph pb-10 relative ">
+  <div class="container relative">
+    <div class="absolute top-0 left-0 w-full">
+      <div class="h-100 w-full overflow-hidden -translate-y-10">
+        <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+      </div>
+    </div>
+    <div class="lg:max-w-4xl mx-auto text-center relative z-10">
+      <h1 class="hasHighlight mb-0" set:html={d.page_header?.title ?? d.title} />
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+</section>
+
+<!-- Featured Article -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
+      <!-- Cover Image -->
+      <div class="overflow-hidden rounded-2xl border border-text-white/10">
+        <ImageMod
+          src={featured.data.image ?? "/images/blog/featured-cover.png"}
+          alt={featured.data.title}
+          width={700}
+          height={500}
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <!-- Featured Info Card -->
+      <GhlBlogFeaturedCard
+        tag={featured.data.tag ?? "Popular"}
+        title={featured.data.title}
+        description={featured.data.description ?? ""}
+        authorImage={featured.data.author_image ?? "/images/blog/author-1.png"}
+        authorName={featured.data.author}
+        date={dateFormat(featured.data.date ?? new Date())}
+        readTime={featured.data.read_time ?? "5 min read"}
+        href={`/blog/${featured.id}`}
+      />
+    </div>
+
+    <hr class="mt-16 h-px border-0 bg-linear-to-r from-transparent via-text-white/15 to-transparent" />
+  </div>
+</section>
+
+<!-- Latest Articles -->
+<section class="section pt-10 lg:pt-14">
+  <div class="container relative isolate">
+    <div class="mb-12 text-center">
+      <h2 class="text-h3-sm md:text-h2 capitalize">{d.latest_section_title ?? "Latest Content From Us"}</h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {latestPosts.map((post) => (
+        <GhlBlogCard
+          image={post.data.image ?? "/images/blog/post-1.png"}
+          imageAlt={post.data.title}
+          title={post.data.title}
+          description={post.data.description ?? ""}
+          authorImage={post.data.author_image ?? "/images/blog/author-1.png"}
+          authorName={post.data.author}
+          date={dateFormat(post.data.date ?? new Date())}
+          href={`/blog/${post.id}`}
+        />
+      ))}
+    </div>
+
+    <div class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[1242px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-radial from-primary/16 from-0% to-transparent to-70% blur-2xl"></div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<CallToAction />
+
+</Base>

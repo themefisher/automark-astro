@@ -1,0 +1,101 @@
+---
+import Base from "@/layouts/Base.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import CareerApplyForm from "@/layouts/components/CareerApplyForm.astro";
+import Badge from "@/layouts/components/Badge.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const jobs = await getCollection("careers", ({ id }) => !id.startsWith("-index"));
+  return jobs.map((job) => ({
+    params: { single: job.id },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+const d = job.data;
+const { Content } = await render(job);
+---
+
+<Base title={d.title} meta_title={d.meta_title ?? d.title} description={d.description ?? ""}>
+
+<!-- Page Header -->
+<section class="section-ph pb-8 relative overflow-hidden">
+  <div class="container relative">
+    <div class="absolute top-0 left-0 w-full">
+      <div class="h-100 w-full overflow-hidden -translate-y-10">
+        <canvas class="heroSporeCanvas w-full"></canvas>
+      </div>
+    </div>
+    <div class="lg:max-w-4xl mx-auto text-center relative">
+      <div class="flex justify-center mb-5">
+        <Badge title="Careers" />
+      </div>
+      <h1 class="mb-0 text-h3 lg:text-h1 hasHighlight" set:html={d.title} />
+    </div>
+  </div>
+  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+</section>
+
+<!-- Hero Banner Image -->
+<section class="pb-8 relative z-10">
+  <div class="container">
+    <div class="relative rounded-3xl overflow-hidden bg-light aspect-video lg:aspect-1000/520">
+      <ImageMod
+        src={d.hero_image ?? "/images/careers/career-details-banner.png"}
+        alt={d.title}
+        width={1200}
+        height={624}
+        class="w-full h-full object-cover opacity-80"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Meta Info Cards -->
+<section class="section-sm pt-0">
+  <div class="container">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {d.meta?.map((item: any) => (
+        <div class="bg-light rounded-2xl p-6 py-12.5 text-center">
+          <p class="text-text text-sm mb-1">{item.label}</p>
+          <p class="text-text-white font-semibold">{item.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Career Details Content + Apply Form -->
+<section class="section">
+  <div class="container">
+    <div class="grid lg:grid-cols-[65%_35%] gap-8 items-start">
+      <!-- Left: Job Content -->
+      <div class="content">
+        <Content />
+      </div>
+      <!-- Right: Apply Form -->
+      <div>
+        <CareerApplyForm />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Back Link -->
+<section class="section-sm pt-0">
+  <div class="container">
+    <a href="/careers" class="btn btn-outline">← Back to Careers</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<Faq />
+
+<!-- Call to Action -->
+<CallToAction />
+
+</Base>
