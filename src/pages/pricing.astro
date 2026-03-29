@@ -1,10 +1,9 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Badge from "@/layouts/components/Badge.astro";
-import PricingCard from "@/layouts/components/PricingCard.astro";
-import GradientBlob from "@/layouts/components/GradientBlob.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
 import Faq from "@/layouts/components/Faq.astro";
+import PricingSection from "@/layouts/components/PricingSection.astro";
 import { getEntry } from "astro:content";
 
 const pricing = await getEntry("pricing", "-index");
@@ -12,113 +11,117 @@ const d = pricing!.data as any;
 ---
 
 <Base title={d.title} meta_title={d.meta_title} description={d.description}>
-
-<!-- Page Header -->
-<section class="section-ph pb-20 relative overflow-hidden">
-  <div class="container relative">
-    <div class="absolute top-0 left-0 w-full">
-      <div class="h-100 w-full overflow-hidden -translate-y-10">
-        <canvas class="heroSporeCanvas w-full"></canvas>
-      </div>
-    </div>
-    <div class="row justify-center">
-      <div class="mb-10 text-center relative z-10">
-        <div class="flex justify-center mb-5">
-          <Badge title={d.page_header.badge} />
+  <!-- Page Header -->
+  <section class="section-ph pb-0 relative overflow-hidden">
+    <div class="container relative">
+      <div class="absolute top-0 left-0 w-full">
+        <div class="h-100 w-full overflow-hidden -translate-y-10">
+          <canvas class="heroSporeCanvas w-full"></canvas>
         </div>
-        <h1 class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight" set:html={d.page_header.title}>
-        </h1>
-        <p class="mb-10 lg:col-6 mx-auto text-text-light text-base">
-          {d.page_header.content}
-        </p>
-
-        <div class="mt-20">
-          <div class="pricing-container">
-            <div class="price-togger">
-              <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
-              <label for="pricing-toggle" class="price-toggler-btn active">{d.toggler.monthly_label}</label>
-              <label for="pricing-toggle" class="price-toggler-btn">{d.toggler.yearly_label}</label>
-            </div>
-            <!-- Cards -->
-            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7 relative z-10">
-              {d.plans.map((plan: any) => (
-                <PricingCard
-                  price={plan.price}
-                  yearly_price={plan.yearly_price}
-                  title={plan.title}
-                  isFeatured={plan.isFeatured}
-                  button_label={plan.button_label}
-                  button_link={plan.button_link}
-                  description={plan.description}
-                  features={plan.features}
-                />
-              ))}
-            </div>
+      </div>
+      <div class="row justify-center">
+        <div class="mb-10 text-center relative z-10">
+          <div class="flex justify-center mb-5">
+            <Badge title={d.page_header.badge} />
           </div>
-          <GradientBlob />
+          <h1
+            class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight"
+            set:html={d.page_header.title}
+          />
+          <p class="mb-10 lg:col-6 mx-auto text-text-light text-base">
+            {d.page_header.content}
+          </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
-</section>
-<hr class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0" />
+    <div
+      class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
+      style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"
+    >
+    </div>
+    <PricingSection isHome={false} />
+  </section>
 
-<!-- Comparison Table -->
-<section class="section relative isolate overflow-hidden">
-  <div class="container">
-    <div class="section-container">
-      <div class="section-intro centralize">
-        <Badge title={d.comparison.badge} />
-        <h2 class="title hasHighlight" set:html={d.comparison.title} />
-      </div>
-      <div class="section-content">
-        <div class="overflow-x-auto">
-          <div class="relative min-w-[1100px] overflow-hidden rounded-3xl border border-border/80 bg-light/70 text-text shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-md">
-            <div class="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center text-sm md:text-base font-primary text-text relative z-10">
-              {d.comparison.headers.map((h: any, i: number) => (
-                <div class={`px-6 py-5 text-h5-sm font-semibold text-text-white ${i === 0 ? '' : 'text-center'}`}>
-                  {h.label}
-                </div>
-              ))}
-            </div>
-            
-            <div class="relative z-10">
-              {d.comparison.rows.map((row: any, i: number) => (
-                <div class={`grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center border-t border-border/60 ${i % 2 === 0 ? 'bg-white/5' : ''}`}>
-                  <div class="px-6 py-4 text-text-white">{row.feature}</div>
-                  {row.values.map((val: any, valIndex: number) => (
-                    <div class="px-6 py-4 text-center">
-                      {typeof val === "boolean" ? (
-                        val ? (
-                          <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/80 shadow-[0_8px_18px_rgba(147,122,255,0.35)]">
-                            <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                              <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                          </span>
-                        ) : (
-                          <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-white/10 ring-1 ring-border/60">
-                            <span class="block h-0.5 w-3 rounded-full bg-white/60"></span>
-                          </span>
-                        )
-                      ) : (
-                        <span class={`font-medium ${valIndex === 1 ? "text-text-white" : "text-text-dark"}`}>{val}</span>
-                      )}
+  <!-- Comparison Table -->
+  <section class="section relative isolate overflow-hidden">
+    <div class="container">
+      <div class="section-container">
+        <div class="section-intro centralize">
+          <Badge title={d.comparison.badge} />
+          <h2 class="title hasHighlight" set:html={d.comparison.title} />
+        </div>
+        <div class="section-content">
+          <div class="overflow-x-auto">
+            <div
+              class="relative min-w-[1100px] overflow-hidden rounded-3xl border border-border/80 bg-light/70 text-text shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-md"
+            >
+              <div
+                class="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center text-sm md:text-base font-primary text-text relative z-10"
+              >
+                {
+                  d.comparison.headers.map((h: any, i: number) => (
+                    <div
+                      class={`px-6 py-5 text-h5-sm font-semibold text-text-white ${i === 0 ? "" : "text-center"}`}
+                    >
+                      {h.label}
                     </div>
-                  ))}
-                </div>
-              ))}
+                  ))
+                }
+              </div>
+
+              <div class="relative z-10">
+                {
+                  d.comparison.rows.map((row: any, i: number) => (
+                    <div
+                      class={`grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center border-t border-border/60 ${i % 2 === 0 ? "bg-white/5" : ""}`}
+                    >
+                      <div class="px-6 py-4 text-text-white">{row.feature}</div>
+                      {row.values.map((val: any, valIndex: number) => (
+                        <div class="px-6 py-4 text-center">
+                          {typeof val === "boolean" ? (
+                            val ? (
+                              <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/80 shadow-[0_8px_18px_rgba(147,122,255,0.35)]">
+                                <svg
+                                  class="h-4 w-4 text-white"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="3"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  aria-hidden="true"
+                                >
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              </span>
+                            ) : (
+                              <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-white/10 ring-1 ring-border/60">
+                                <span class="block h-0.5 w-3 rounded-full bg-white/60" />
+                              </span>
+                            )
+                          ) : (
+                            <span
+                              class={`font-medium ${valIndex === 1 ? "text-text-white" : "text-text-dark"}`}
+                            >
+                              {val}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<Faq />
+  <!-- FAQ -->
+  <Faq />
 
-<!-- Call to Action -->
-<CallToAction />
+  <!-- Call to Action -->
+  <CallToAction />
 </Base>
