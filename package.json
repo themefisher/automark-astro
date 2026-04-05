@@ -1,7 +1,7 @@
 {
-  "name": "ghl-astro",
+  "name": "automark-astro",
   "version": "1.0.0",
-  "description": "GHL is a marketing and sales automation platform",
+  "description": "Automark is a marketing and sales automation platform",
   "author": "Themefisher",
   "license": "UNLICENSED",
   "packageManager": "yarn@1.22.22",
@@ -26,7 +26,6 @@
     "astro-auto-import": "^0.5.1",
     "astro-swiper": "^2.2.1",
     "date-fns": "^4.1.0",
-    "disqus-react": "^1.1.7",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^17.0.4",

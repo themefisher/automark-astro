@@ -1,7 +1,7 @@
 ---
 title: "Careers"
-meta_title: "Careers at AutoMark - Build the Future With Us"
-description: "Join AutoMark and help build the future of AI-powered marketing automation."
+meta_title: "Careers at Automark - Build the Future With Us"
+description: "Join Automark and help build the future of AI-powered marketing automation."
 draft: false
 
 page_header:
@@ -23,7 +23,7 @@ gallery:
 
 what_we_offer:
   title: "What We Offer"
-  subtitle: "AutoMark's intuitive platform makes it easy for team members to organize, prioritize and solve customer requests — all in a familiar interface."
+  subtitle: "Automark's intuitive platform makes it easy for team members to organize, prioritize and solve customer requests — all in a familiar interface."
 
 offers:
   - logo: "/images/icons/healthicon.svg"

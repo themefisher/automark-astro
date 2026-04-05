@@ -1,7 +1,7 @@
 ---
 title: "Blog"
-meta_title: "Blog - AutoMark"
-description: "Stay informed with the latest news, insights and guides from AutoMark on AI-driven marketing automation."
+meta_title: "Blog - Automark"
+description: "Stay informed with the latest news, insights and guides from Automark on AI-driven marketing automation."
 draft: false
 
 page_header:

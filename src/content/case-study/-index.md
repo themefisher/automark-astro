@@ -1,13 +1,13 @@
 ---
 title: "Case Studies"
-meta_title: "Case Studies - AutoMark"
-description: "See how businesses like yours are scaling with AutoMark."
+meta_title: "Case Studies - Automark"
+description: "See how businesses like yours are scaling with Automark."
 draft: false
 
 page_header:
   badge: "Case Studies"
   title: "Real Results From Real <strong>Businesses</strong>"
-  content: "See how companies across industries are using AutoMark to capture more leads, automate follow-ups, and drive explosive growth."
+  content: "See how companies across industries are using Automark to capture more leads, automate follow-ups, and drive explosive growth."
 
 testimonials:
   badge: "Testimonials"
@@ -16,7 +16,7 @@ testimonials:
     - poster: "/images/testimonials/1.jpg"
       name: "Sarah Jenkins"
       designation: "CMO at GlobalTech"
-      content: "AutoMark has completely revolutionized our marketing pipeline. We've seen a 300% increase in lead retention."
+      content: "Automark has completely revolutionized our marketing pipeline. We've seen a 300% increase in lead retention."
     - poster: "/images/testimonials/2.jpg"
       name: "Marcus Aurelius"
       designation: "VP of Sales, Rome Inc."

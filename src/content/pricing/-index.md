@@ -1,6 +1,6 @@
 ---
 title: "Pricing"
-meta_title: "Pricing - AutoMark"
+meta_title: "Pricing - Automark"
 description: "Simple, transparent pricing for every stage of your business growth."
 draft: false
 
@@ -93,7 +93,7 @@ comparison:
       values: ["Unlimited", true, "Unlimited"]
     - feature: "Drag & Drop Editor"
       values: [true, true, true]
-    - feature: "A/B Testing"
+    - feature: "A/B Automark"
       values: [false, false, true]
     - feature: "Advanced Analytics & Reporting"
       values: [false, true, true]

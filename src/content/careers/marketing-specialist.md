@@ -1,6 +1,6 @@
 ---
 title: "Marketing Specialist"
-meta_title: "Marketing Specialist - AutoMark Careers"
+meta_title: "Marketing Specialist - Automark Careers"
 description: "Develop and execute marketing campaigns that drive growth and engage our target audience."
 type: "Full time"
 location: "California"
@@ -19,7 +19,7 @@ meta:
 
 ## Job Description
 
-AutoMark is looking for a Marketing Specialist to join our marketing team and help drive awareness and pipeline for our AI-powered platform. You'll execute across channels — content, email, social, and events — with a bias for speed and experimentation.
+Automark is looking for a Marketing Specialist to join our marketing team and help drive awareness and pipeline for our AI-powered platform. You'll execute across channels — content, email, social, and events — with a bias for speed and experimentation.
 
 ## Job Responsibilities
 

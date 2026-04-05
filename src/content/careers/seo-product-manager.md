@@ -1,6 +1,6 @@
 ---
 title: "SEO Product Manager"
-meta_title: "SEO Product Manager - AutoMark Careers"
+meta_title: "SEO Product Manager - Automark Careers"
 description: "Lead product strategy, collaborate with engineering, and shape the future of our analytics platform."
 type: "Full time"
 location: "California"
@@ -19,7 +19,7 @@ meta:
 
 ## Job Description
 
-AutoMark is hiring a Marketing Operations and Analytics Manager to own our marketing tech stack, data infrastructure, and performance reporting. You'll ensure our campaigns run smoothly, our tools are integrated, and our team has the insights needed to scale. Perfect for someone who loves systems, automation, and turning chaos into clarity.
+Automark is hiring a Marketing Operations and Analytics Manager to own our marketing tech stack, data infrastructure, and performance reporting. You'll ensure our campaigns run smoothly, our tools are integrated, and our team has the insights needed to scale. Perfect for someone who loves systems, automation, and turning chaos into clarity.
 
 We are in-person, looking for our San Francisco office 4 days a week.
 

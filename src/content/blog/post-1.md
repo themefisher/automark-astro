@@ -1,6 +1,6 @@
 ---
 title: "The Future of Marketing & Sales Is Fully Automated"
-meta_title: "The Future of Marketing & Sales Is Fully Automated - AutoMark Blog"
+meta_title: "The Future of Marketing & Sales Is Fully Automated - Automark Blog"
 description: "Manual workflows slow teams down. In this blog, we explore how AI-driven automation is transforming marketing and sales."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/post-1.png"

@@ -1,6 +1,6 @@
 ---
 title: "Contact Us"
-meta_title: "Contact Us - AutoMark"
+meta_title: "Contact Us - Automark"
 description: "Have a question? Send us a message"
 draft: false
 
@@ -10,7 +10,7 @@ page_header:
 contact_info:
   - type: "email"
     title: "Email Us"
-    detail: "automark@gmail.com"
+    detail: "Automark@gmail.com"
     icon: "FaEnvelope" # Replacing original SVG with react-icons later or using raw svg in component. Let's just pass type.
   - type: "phone"
     title: "Call Us"

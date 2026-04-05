@@ -1,6 +1,6 @@
 ---
 title: "Automating Follow-Ups Without Losing the Human Touch"
-meta_title: "Automating Follow-Ups Without Losing the Human Touch - AutoMark Blog"
+meta_title: "Automating Follow-Ups Without Losing the Human Touch - Automark Blog"
 description: "Discover how AI automation can handle emails, messages, and reminders while maintaining a natural, human tone."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/post-6.png"

@@ -1,7 +1,7 @@
 ---
 title: "TechNova Grows Revenue by 320% in 90 Days"
-meta_title: "TechNova Case Study - AutoMark"
-description: "How TechNova used AutoMark's automation to triple their revenue in just 90 days."
+meta_title: "TechNova Case Study - Automark"
+description: "How TechNova used Automark's automation to triple their revenue in just 90 days."
 date: 2024-02-15
 draft: false
 
@@ -31,7 +31,7 @@ overview:
   heading: "Overview"
   paragraphs:
     - "TechNova is a fast-growing SaaS company that provides project management tools to remote teams worldwide."
-    - "Before AutoMark, TechNova struggled with manual outreach and inconsistent follow-up sequences that led to poor trial-to-paid conversion rates."
+    - "Before Automark, TechNova struggled with manual outreach and inconsistent follow-up sequences that led to poor trial-to-paid conversion rates."
     - "They needed a scalable system to automate their onboarding emails, nurture free trial users, and convert them to paying customers."
 
 challenges:
@@ -40,7 +40,7 @@ challenges:
     - "TechNova's sales team was spending over 30 hours a week on manual follow-ups with no clear system for prioritizing hot leads."
     - "Their email open rates were below 12% and conversion from trial to paid was stuck at 3%."
     - "Without proper automation, scaling their outreach meant hiring more staff — an expensive proposition."
-  quote: "We were drowning in manual work. AutoMark gave us back our time and helped us actually close deals instead of just chasing them."
+  quote: "We were drowning in manual work. Automark gave us back our time and helped us actually close deals instead of just chasing them."
   quote_author:
     name: "Marcus Chen"
     designation: "Head of Growth"
@@ -49,7 +49,7 @@ challenges:
 solution:
   image: "/images/case-study-solution.png"
   heading: "Solution"
-  content: "AutoMark implemented a full-funnel automation strategy that turned TechNova's trial users into loyal paying customers."
+  content: "Automark implemented a full-funnel automation strategy that turned TechNova's trial users into loyal paying customers."
   items:
     - "Behavioral-trigger email sequences based on in-app actions"
     - "Automated SMS follow-ups for trial users nearing expiration"

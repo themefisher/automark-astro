@@ -1,6 +1,6 @@
 ---
 title: "Why Traditional CRMs Are Failing & What AI Does Better"
-meta_title: "Why Traditional CRMs Are Failing - AutoMark Blog"
+meta_title: "Why Traditional CRMs Are Failing - Automark Blog"
 description: "This article breaks down the limitations of traditional CRM tools and explains how AI-driven platforms provide better prediction."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/post-3.png"

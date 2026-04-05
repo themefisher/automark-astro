@@ -1,19 +1,19 @@
 ---
 title: "Features"
-meta_title: "Features - AutoMark"
-description: "AutoMark is your AI-powered marketing and sales engine — built to attract, engage, convert, and retain customers on autopilot."
+meta_title: "Features - Automark"
+description: "Automark is your AI-powered marketing and sales engine — built to attract, engage, convert, and retain customers on autopilot."
 draft: false
 
 banner:
   title: "Features That Turn <br /> Attention <strong>Into Revenue</strong>"
-  content: "AutoMark is your AI-powered marketing and sales engine — built to attract, engage, convert, and retain customers on autopilot."
+  content: "Automark is your AI-powered marketing and sales engine — built to attract, engage, convert, and retain customers on autopilot."
   button_primary:
     label: "Start Free Trial"
     link: "#"
   button_secondary:
     label: "Book a Demo"
     link: "#"
-  image: "/images/automark_dashboard.png"
+  image: "/images/Automark_dashboard.png"
 
 partners:
   badge: "Trusted Partners"
@@ -60,7 +60,7 @@ service_features:
       - icon: "fa-solid fa-cubes"
         title: "Modular Architecture"
         content: "Scale features independently based on your needs."
-        
+
   - title: "The reasons to prefer choosing <strong>our platform</strong>"
     image: "/images/features/service-feature-2.svg"
     reverse: true

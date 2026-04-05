@@ -1,7 +1,7 @@
 ---
-title: "Kyber Security Achieves 1,800% ROI With AutoMark"
-meta_title: "Kyber Security Case Study - AutoMark"
-description: "How Kyber Security transformed their lead generation and achieved 1,800% ROI using AutoMark's automation platform."
+title: "Kyber Security Achieves 1,800% ROI With Automark"
+meta_title: "Kyber Security Case Study - Automark"
+description: "How Kyber Security transformed their lead generation and achieved 1,800% ROI using Automark's automation platform."
 date: 2024-01-20
 draft: false
 
@@ -31,7 +31,7 @@ overview:
   heading: "Overview"
   paragraphs:
     - "Kyber Security is a leading cybersecurity services provider for the U.S. defense and intelligence communities, protecting organizations from increasingly complex cyber threats."
-    - "When Kyber Security approached AutoMark, they were struggling with inefficient lead management processes and lacked a unified system to track and nurture prospects through their complex sales cycles."
+    - "When Kyber Security approached Automark, they were struggling with inefficient lead management processes and lacked a unified system to track and nurture prospects through their complex sales cycles."
     - "Their existing tools were fragmented, leading to missed opportunities and inconsistent follow-ups. They needed a comprehensive solution that could automate their marketing efforts while maintaining the personal touch their high-value clients expected."
 
 challenges:
@@ -50,12 +50,12 @@ challenges:
 solution:
   image: "/images/case-study-solution.png"
   heading: "Solution"
-  content: "With many years of experience and a focus on Lead Capture, AutoMark transformed how Kyber Security approached their marketing and sales processes."
+  content: "With many years of experience and a focus on Lead Capture, Automark transformed how Kyber Security approached their marketing and sales processes."
   items:
     - "Implemented automated lead scoring and nurturing workflows"
     - "Created personalized email campaigns based on prospect behavior"
     - "Integrated CRM with marketing automation for seamless data flow"
-    - "Developed custom landing pages with A/B testing capabilities"
+    - "Developed custom landing pages with A/B Automark capabilities"
     - "Provided real-time analytics dashboard for performance tracking"
 
 results:

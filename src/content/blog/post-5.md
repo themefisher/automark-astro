@@ -1,6 +1,6 @@
 ---
 title: "How AI Predicts Buyer Intent Before They Convert"
-meta_title: "How AI Predicts Buyer Intent - AutoMark Blog"
+meta_title: "How AI Predicts Buyer Intent - Automark Blog"
 description: "This blog dives into buyer intent prediction and explains how AI identifies high-value prospects using data patterns."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/post-5.png"

@@ -1,9 +1,8 @@
 ---
-import ImageMod from "@/layouts/components/ImageMod.astro";
-import Logo from "@/components/Logo.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
+import ImageMod from "@/layouts/components/ImageMod.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { footer_primary, footer_resource, footer_legal } = menu as any;
@@ -14,67 +13,93 @@ const { footer_primary, footer_resource, footer_legal } = menu as any;
     <div class="flex lg:justify-between flex-wrap gap-x-10 gap-y-10">
       <!-- Column 1 - Logo & Contact -->
       <div class="max-w-95 mb-20 text-lg text-text">
-        <ImageMod           src="/images/logo.svg"
+        <ImageMod
+          src="/images/logo.svg"
           width={156}
           height={50}
           class="h-[50px]"
-          alt="logo" />
+          alt="logo"
+        />
         <p class="mt-6">
           Empowering Marketing businesses through intelligent automation.
         </p>
         <a
           class="link mt-6 inline-block underline"
-          href="mailto:contact@automark.com">contact@automark.com</a>
-        <a class="link mt-4 block" href="tel:(+1) 165-320-0102">(+1) 165-320-0102</a>
+          href="mailto:contact@Automark.com">contact@Automark.com</a
+        >
+        <a class="link mt-4 block" href="tel:(+1) 165-320-0102"
+          >(+1) 165-320-0102</a
+        >
       </div>
       <!-- Column 2 - Primary -->
       <div>
         <h3 class="footer-label">Primary</h3>
         <ul>
-          {footer_primary?.map((item: any) => (
-            <li class="mb-5">
-              <a href={item.url} class="footer-link">{item.name}</a>
-            </li>
-          ))}
+          {
+            footer_primary?.map((item: any) => (
+              <li class="mb-5">
+                <a href={item.url} class="footer-link">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <!-- Column 3 - Resource -->
       <div>
         <h3 class="footer-label">Resource</h3>
         <ul>
-          {footer_resource?.map((item: any) => (
-            <li class="mb-5">
-              <a href={item.url} class="footer-link">{item.name}</a>
-            </li>
-          ))}
+          {
+            footer_resource?.map((item: any) => (
+              <li class="mb-5">
+                <a href={item.url} class="footer-link">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <!-- Column 4 - Legal -->
       <div>
         <h3 class="footer-label">Legal</h3>
         <ul>
-          {footer_legal?.map((item: any) => (
-            <li class="mb-5">
-              <a href={item.url} class="footer-link">{item.name}</a>
-            </li>
-          ))}
+          {
+            footer_legal?.map((item: any) => (
+              <li class="mb-5">
+                <a href={item.url} class="footer-link">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
   </div>
   <!-- Bottom Area -->
-  <hr class="h-px bg-linear-to-r from-transparent from-25% via-text-white/50 to-75% to-transparent border-0" />
+  <hr
+    class="h-px bg-linear-to-r from-transparent from-25% via-text-white/50 to-75% to-transparent border-0"
+  />
   <div class="container py-7">
-    <div class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full">
-      <p class="text-base text-text" set:html={markdownify(config.params.copyright)} />
+    <div
+      class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full"
+    >
+      <p
+        class="text-base text-text"
+        set:html={markdownify(config.params.copyright)}
+      />
       <ul class="social-icons lg:ml-auto">
-        {social.main.map((item: any) => (
-          <li>
-            <a href={item.link} aria-label={item.name}>
-              <i class={`fa-brands fa-${item.name}`}></i>
-            </a>
-          </li>
-        ))}
+        {
+          social.main.map((item: any) => (
+            <li>
+              <a href={item.link} aria-label={item.name}>
+                <i class={`fa-brands fa-${item.name}`} />
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <div></div>
     </div>
@@ -82,5 +107,7 @@ const { footer_primary, footer_resource, footer_legal } = menu as any;
 
   <div
     class="absolute bottom-0 left-1/2 size-280 blur-2xl -translate-x-1/2 translate-y-1/2 -z-10"
-    style="background: radial-gradient(circle, #6e4dff4e 0%, rgba(202, 194, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);"></div>
+    style="background: radial-gradient(circle, #6e4dff4e 0%, rgba(202, 194, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);"
+  >
+  </div>
 </footer>

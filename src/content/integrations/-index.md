@@ -1,7 +1,7 @@
 ---
 title: "Integrations"
-meta_title: "Integrations - AutoMark"
-description: "Seamlessly connect AutoMark with your favorite tools and platforms."
+meta_title: "Integrations - Automark"
+description: "Seamlessly connect Automark with your favorite tools and platforms."
 draft: false
 
 page_header:

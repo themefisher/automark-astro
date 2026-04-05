@@ -1,15 +1,14 @@
 {
   "site": {
-    "title": "AutoMark",
-    "base_url": "https://automark.netlify.app",
+    "title": "Automark",
+    "base_url": "https://automark-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.svg",
-    "logo_darkmode": "",
     "logo_width": "156",
     "logo_height": "50",
-    "logo_text": "AutoMark"
+    "logo_text": "Automark"
   },
 
   "settings": {
@@ -19,15 +18,9 @@
     "blog_folder": "blog"
   },
 
-  "announcement": {
-    "enable": false,
-    "content": "",
-    "expire_days": 7
-  },
-
   "params": {
     "contact_form_action": "#",
-    "copyright": "Copyright &copy; 2026 <strong>AutoMark</strong> All Rights Reserved"
+    "copyright": "Copyright &copy; 2026 <strong><a target=\"_blank\" href=\"https://themefisher.com/\">Themefisher</a></strong> All Rights Reserved"
   },
 
   "navigation_button": {
@@ -41,14 +34,8 @@
     "gtm_id": "GTM-XXXXXX"
   },
 
-  "disqus": {
-    "enable": false,
-    "shortname": "",
-    "settings": {}
-  },
-
   "metadata": {
-    "meta_author": "AutoMark",
+    "meta_author": "Automark",
     "meta_image": "/images/og-image.png",
     "meta_description": "The all-in-one marketing and sales automation platform"
   }

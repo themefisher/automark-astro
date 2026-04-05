@@ -16,5 +16,5 @@ items:
   - question: "How can AI automation help my business?"
     answer: "AI automation can capture leads instantly, follow up automatically via email and SMS, score prospects, and route them to your team — all without manual effort, so you can focus on closing deals."
   - question: "What tools do AI designers and developers use?"
-    answer: "Common tools include Figma AI plugins, GitHub Copilot, Midjourney, ChatGPT, and platforms like AutoMark that combine CRM, automation, and analytics in one unified system."
+    answer: "Common tools include Figma AI plugins, GitHub Copilot, Midjourney, ChatGPT, and platforms like Automark that combine CRM, automation, and analytics in one unified system."
 ---

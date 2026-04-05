@@ -1,6 +1,6 @@
 ---
 title: "The Human Touch In AI Marketing: Finding the Right Balance"
-meta_title: "The Human Touch In AI Marketing - AutoMark Blog"
+meta_title: "The Human Touch In AI Marketing - Automark Blog"
 description: "AI is powerful, but emotion still wins. Here's how to merge automation with authenticity to create campaigns that truly connect."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/featured-cover.png"
@@ -28,7 +28,7 @@ The best creative systems today are hybrids: AI tools that assist with speed and
 ### The Future of Hybrid Creativity
 
 - AI generates first drafts; humans refine with brand voice
-- AI identifies what content resonates; humans decide what to create 
+- AI identifies what content resonates; humans decide what to create
 - AI personalizes at scale; humans ensure the message is worth personalizing
 - AI tests hundreds of variants; humans pick the winners
 

@@ -1,6 +1,6 @@
 ---
 title: "UX/UI Designer"
-meta_title: "UX/UI Designer - AutoMark Careers"
+meta_title: "UX/UI Designer - Automark Careers"
 description: "Create intuitive user experiences and beautiful interfaces for our growing product suite."
 type: "Full time"
 location: "Remote"
@@ -19,7 +19,7 @@ meta:
 
 ## Job Description
 
-We're looking for a talented UX/UI Designer to help us craft exceptional digital experiences for our marketing automation platform. You'll own the visual language and interaction design that makes AutoMark feel effortless to use.
+We're looking for a talented UX/UI Designer to help us craft exceptional digital experiences for our marketing automation platform. You'll own the visual language and interaction design that makes Automark feel effortless to use.
 
 ## Job Responsibilities
 

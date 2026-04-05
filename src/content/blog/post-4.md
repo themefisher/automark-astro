@@ -1,6 +1,6 @@
 ---
 title: "Hyper-Personalization at Scale: AI's Biggest Advantage"
-meta_title: "Hyper-Personalization at Scale - AutoMark Blog"
+meta_title: "Hyper-Personalization at Scale - Automark Blog"
 description: "Learn how AI analyzes behavior, intent, and engagement signals to create personalized campaigns at scale."
 date: 2025-01-20T05:00:00Z
 image: "/images/blog/post-4.png"
