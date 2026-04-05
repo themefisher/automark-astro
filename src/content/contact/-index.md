@@ -18,26 +18,4 @@ contact_info:
   - type: "calendar"
     title: "Book A Meeting"
     detail: "calendar.app.google"
-
-form:
-  action: "#"
-  fields:
-    - name: "name"
-      type: "text"
-      placeholder: "Name"
-      required: true
-    - name: "email"
-      type: "email"
-      placeholder: "Email Address"
-      required: true
-    - name: "phone"
-      type: "tel"
-      placeholder: "Phone number"
-      required: true
-    - name: "message"
-      type: "textarea"
-      placeholder: "Write your message..."
-      required: true
-  terms_text: "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply."
-  submit_label: "Send Message"
 ---

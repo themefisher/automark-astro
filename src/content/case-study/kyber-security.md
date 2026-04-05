@@ -19,12 +19,16 @@ stat2Label: "Reduction in manual work"
 meta:
   - label: "Client"
     value: "Kyber Security"
+    icon: "/images/icons/careerdevelopment.svg"
   - label: "Industry"
     value: "Public Safety"
+    icon: "/images/icons/healthicon.svg"
   - label: "Service"
     value: "Lead Capture"
+    icon: "/images/icons/paidtimeoff.svg"
   - label: "Date"
     value: "20 Jan 2024"
+    icon: "/images/icons/wellbeing.svg"
 
 overview:
   image: "/images/case-study-overview.png"

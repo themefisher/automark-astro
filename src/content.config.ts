@@ -76,21 +76,6 @@ const contactCollection = defineCollection({
         }),
       )
       .optional(),
-    form: z
-      .object({
-        action: z.string(),
-        fields: z.array(
-          z.object({
-            name: z.string(),
-            type: z.string(),
-            placeholder: z.string(),
-            required: z.boolean().optional(),
-          }),
-        ),
-        terms_text: z.string(),
-        submit_label: z.string(),
-      })
-      .optional(),
   }),
 });
 
@@ -326,24 +311,10 @@ const caseStudyCollection = defineCollection({
         content: z.string(),
       })
       .optional(),
-    testimonials: z
-      .object({
-        badge: z.string().optional(),
-        title: z.string(),
-        items: z.array(
-          z.object({
-            poster: z.string(),
-            name: z.string().optional(),
-            designation: z.string().optional(),
-            content: z.string().optional(),
-          }),
-        ),
-      })
-      .optional(),
     hero_image: z.string().optional(),
     thumbnail: z.string().optional(),
     meta: z
-      .array(z.object({ label: z.string(), value: z.string() }))
+      .array(z.object({ label: z.string(), value: z.string(),icon: z.string() }))
       .optional(),
     logo: z.string().optional(),
     company: z.string().optional(),
@@ -540,6 +511,7 @@ const testimonialSectionCollection = defineCollection({
         designation: z.string(),
         poster: z.string(),
         content: z.string(),
+          video: z.string().optional(),
       }),
     ),
   }),

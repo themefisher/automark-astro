@@ -18,13 +18,17 @@ stat2Label: "Target keywords ranked"
 
 meta:
   - label: "Client"
-    value: "TechNova"
+    value: "Kyber Security"
+    icon: "/images/icons/careerdevelopment.svg"
   - label: "Industry"
-    value: "SaaS"
+    value: "Public Safety"
+    icon: "/images/icons/healthicon.svg"
   - label: "Service"
-    value: "Marketing Automation"
+    value: "Lead Capture"
+    icon: "/images/icons/paidtimeoff.svg"
   - label: "Date"
-    value: "15 Feb 2024"
+    value: "20 Jan 2024"
+    icon: "/images/icons/wellbeing.svg"
 
 overview:
   image: "/images/case-study-overview.png"

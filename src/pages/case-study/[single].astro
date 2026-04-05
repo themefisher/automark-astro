@@ -35,9 +35,7 @@ const d = study.data;
         </div>
       </div>
       <div class="lg:max-w-4xl mx-auto text-center relative">
-        <div class="flex justify-center mb-5">
-          <Badge title="Case Study" />
-        </div>
+
         <h1 class="mb-0 text-h3 lg:text-h1 hasHighlight" set:html={d.title} />
       </div>
     </div>
@@ -70,6 +68,9 @@ const d = study.data;
         {
           d?.meta?.map((item: any) => (
             <div class="bg-light rounded-2xl p-6 py-12.5 text-center">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <ImageMod src={item.icon} alt={item.label} class="w-8 h-8" width={32} height={32} />
+              </div>
               <p class="text-text text-sm mb-1">{item.label}</p>
               <p class="text-text-white font-semibold">{item.value}</p>
             </div>

@@ -5,6 +5,7 @@ import TestimonialCard from "@/layouts/components/TestimonialCard.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
 import CaseStudyCard from "@/layouts/components/CaseStudyCard.astro";
 import { getEntry, getCollection } from "astro:content";
+import Testimonial from "@/partials/Testimonial.astro";
 
 const caseStudyList = await getEntry("caseStudy", "-index");
 const d = caseStudyList!.data as any;
@@ -25,9 +26,7 @@ const caseStudies = await getCollection("caseStudy", ({ id }) => !id.startsWith(
     </div>
     <div class="row justify-center">
       <div class="mb-20 text-center relative">
-        <div class="flex justify-center mb-5">
-          <Badge title={d.page_header.badge} />
-        </div>
+      
         <h1 class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight" set:html={d.page_header.title} />
         <p class="mb-10 lg:col-6 mx-auto text-lg">{d.page_header.content}</p>
       </div>
@@ -61,23 +60,7 @@ const caseStudies = await getCollection("caseStudy", ({ id }) => !id.startsWith(
 </section>
 
 <!-- Testimonials -->
-<section class="section relative">
-  <div class="container">
-    <div class="section-container">
-      <div class="section-intro centralize">
-        <Badge title={d.testimonials.badge} />
-        <h2 class="title hasHighlight" set:html={d.testimonials.title} />
-      </div>
-      <div class="section-content">
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
-          {d.testimonials.items.map((item: any) => (
-            <TestimonialCard poster={item.poster} name={item.name} designation={item.designation} content={item.content} />
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<Testimonial />
 
 <!-- Call to Action -->
 <CallToAction />
