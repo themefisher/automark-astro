@@ -78,43 +78,5 @@ service_features:
         title: "Powerfull App"
         content: "Provide simple and minimalist dashboard."
 
-comparison:
-  badge: "Comparison"
-  title: "But It Used To Be <strong>Difficult</strong>"
-  items:
-    - title: "WhatsApp Automation"
-    - title: "Social Media Platforms"
-    - title: "Unlimited Sales Funnel"
-    - title: "Website Builder"
-    - title: "Appointments Booking"
-    - title: "Surveys & Forms"
-    - title: "Email Marketing"
-    - title: "SMS Marketing"
-    - title: "CRM System"
-    - title: "Workflow Automation"
 
-business_needs:
-  badge: "Business Needs"
-  title: "The 5 things every <strong>Business Needs</strong>"
-  items:
-    - image: "/images/brands-group-1.png"
-      number: "01"
-      title: "TRAFFIC"
-      desc: "Choose the automation plan that fits your business and start driving targeted traffic to your landing pages immediately."
-    - image: "/images/brands-group-2.png"
-      number: "02"
-      title: "CAPTURE"
-      desc: "Convert the automation plan that fits your business and set up your capture forms in minutes."
-    - image: "/images/brands-group-3.png"
-      number: "03"
-      title: "NURTURE"
-      desc: "Choose the automation plan that fits your business and set up automated nurture sequences."
-    - image: "/images/brands-group-4.png"
-      number: "04"
-      title: "CONVERT"
-      desc: "Choose the automation plan that fits your business."
-    - image: "/images/brands-group-5.png"
-      number: "05"
-      title: "REFER"
-      desc: "Choose the automation plan that fits your business and set up referral programs."
 ---

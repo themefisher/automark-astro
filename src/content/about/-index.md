@@ -71,11 +71,4 @@ core_values:
       title: "Surveys & Forms"
       isStarred: false
 
-testimonials:
-  badge: "Testimonials"
-  title: "Real Stories From <strong>Owners</strong>"
-  items:
-    - poster: "/images/testimonials/1.jpg"
-    - poster: "/images/testimonials/2.jpg"
-    - poster: "/images/testimonials/3.jpg"
 ---

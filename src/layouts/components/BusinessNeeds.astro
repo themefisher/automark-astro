@@ -1,0 +1,38 @@
+---
+import Badge from "./Badge.astro";
+import BnCard from "./BnCard.astro";
+import { getEntry } from "astro:content";
+
+const data = await getEntry("businessNeedsSection", "business-needs");
+if (!data || !data.data.enable) return;
+const d = data.data;
+---
+
+{
+  d.enable && (
+    <section class="section relative isolate overflow-x-hidden">
+      <div class="container">
+        <div class="section-container">
+          <div class="section-intro centralize">
+            <h2 class="title hasHighlight" set:html={d.title} />
+          </div>
+          <div class="section-content">
+            <div class="flex flex-col gap-y-2 px-4">
+              {d.items.map((item: any) => (
+                <BnCard
+                  image={item.image}
+                  number={item.number}
+                  title={item.title}
+                  desc={item.desc}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 grid place-items-center size-full -z-10">
+        <div class="size-225 bg-radial from-gradient-end/30 to-transparent from-0% to-70% rounded-full" />
+      </div>
+    </section>
+  )
+}

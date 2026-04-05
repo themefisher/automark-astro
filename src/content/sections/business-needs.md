@@ -1,0 +1,26 @@
+---
+enable: true
+badge: ""
+title: "The 5 things every <strong>Business Needs</strong>"
+items:
+  - image: "/images/brands-group-1.png"
+    number: "01"
+    title: "TRAFFIC"
+    desc: "Choose the automation plan that fits your [Niche] business and set up your account in less than 2 minutes."
+  - image: "/images/brands-group-2.png"
+    number: "02"
+    title: "CAPTURE"
+    desc: "Choose the automation plan that fits your [Niche] business and set up."
+  - image: "/images/brands-group-3.png"
+    number: "03"
+    title: "NURTURING"
+    desc: "Choose the automation plan that fits your [Niche] business and set up."
+  - image: "/images/brands-group-4.png"
+    number: "04"
+    title: "CONVERT"
+    desc: "Choose the automation plan that fits your [Niche] business."
+  - image: "/images/brands-group-5.png"
+    number: "05"
+    title: "REFER"
+    desc: "Choose the automation plan that fits your [Niche] business and set up."
+---

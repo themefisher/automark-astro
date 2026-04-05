@@ -11,155 +11,324 @@ import Faq from "@/layouts/components/Faq.astro";
 import OurStory from "@/layouts/components/OurStory.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
 import { getEntry } from "astro:content";
+import Testimonial from "@/partials/Testimonial.astro";
 
 const about = await getEntry("about", "-index");
 const d = about!.data as any;
 ---
 
 <Base title={d.title} meta_title={d.meta_title} description={d.description}>
-
-<!-- Page Header -->
-<section class="section-ph pb-20 overflow-hidden">
-  <div class="container">
-    <div class="lg:max-w-4xl mx-auto text-center">
-      <h1 class="hasHighlight mb-6" set:html={d.page_header.title} />
-      <p class="mb-5 text-lg text-text">{d.page_header.subtitle}</p>
-      <ImageMod         src={d.page_header.image}
-        alt="Team collaboration meeting"
-        class="w-full h-auto object-cover aspect-video lg:aspect-1000/520 rounded-3xl mt-20" />
+  <!-- Page Header -->
+  <section class="section-ph pb-20 overflow-hidden">
+    <div class="container">
+      <div class="lg:max-w-4xl mx-auto text-center">
+        <h1 class="hasHighlight mb-6" set:html={d.page_header.title} />
+        <p class="mb-5 text-lg text-text">{d.page_header.subtitle}</p>
+        <ImageMod
+          src={d.page_header.image}
+          alt="Team collaboration meeting"
+          class="w-full h-auto object-cover aspect-video lg:aspect-1000/520 rounded-3xl mt-20"
+        />
+      </div>
+      <div
+        class="absolute inset-0 h-full w-full max-h-113 overflow-hidden -z-10"
+      >
+        <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+      </div>
     </div>
-    <div class="absolute inset-0 h-full w-full max-h-113 overflow-hidden -z-10">
-      <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+    <div
+      class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
+      style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"
+    >
     </div>
-  </div>
-  <div class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl" style="background: radial-gradient(circle, #9982ff 0%, #6e4dffc8 20%, rgba(202, 194, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);"></div>
-  <div class="absolute top-0 left-0 flex flex-col gap-6 -z-10">
-    <svg xmlns="http://www.w3.org/2000/svg" width="567" height="558" fill="none">
-      <g opacity=".5">
-        <g filter="url(#a-about)" style="mix-blend-mode: plus-lighter"><path fill="url(#b-about)" d="M-20.527-7.51 10.182-43l259.774 233.148-13.283 15.352-277.2-213.01Z" /></g>
-        <g filter="url(#c-about)" style="mix-blend-mode: plus-lighter"><path fill="url(#d-about)" d="M-52 13.659-20.788-25l267.328 224.459-13.502 16.722-285.04-202.522Z" /></g>
-        <g filter="url(#e-about)" style="mix-blend-mode: plus-lighter"><path fill="url(#f-about)" d="M-108.079-4.9-66.125-46l290.011 307.352-18.147 17.779-313.818-284.03Z" /></g>
-        <g filter="url(#g-about)"><ellipse cx="143" cy="252.378" fill="#530DBB" fill-opacity=".5" rx="143" ry="252.378" transform="scale(-1 1) rotate(46.133 191.203 -117.756)" /></g>
-      </g>
-      <defs>
-        <filter id="a-about" width="338.484" height="296.5" x="-44.527" y="-67" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" /></filter>
-        <filter id="c-about" width="346.541" height="289.181" x="-76.001" y="-49" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" /></filter>
-        <filter id="e-about" width="379.965" height="373.131" x="-132.079" y="-70" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1_foregroundBlur" stdDeviation="12" /></filter>
-        <filter id="g-about" width="914.454" height="906.103" x="-348.178" y="-349.061" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix" /><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" /><feGaussianBlur result="effect1_foregroundBlur" stdDeviation="125" /></filter>
-        <linearGradient id="b-about" x1="-5.173" x2="258.744" y1="-25.255" y2="203.106" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
-        <linearGradient id="d-about" x1="-36.394" x2="235.144" y1="-5.671" y2="213.574" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
-        <linearGradient id="f-about" x1="-87.102" x2="208.568" y1="-25.45" y2="276.359" gradientUnits="userSpaceOnUse"><stop stop-color="#7369FF" /><stop offset="1" stop-color="#6971FF" stop-opacity="0" /></linearGradient>
-      </defs>
-    </svg>
-  </div>
-</section>
-<hr class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0" />
-
-<!-- Trusted By Section -->
-<section class="section-sm pt-16 xl:pt-20">
-  <div class="container">
-    <div class="text-center mb-10">
-      <p class="text-text-light text-base">
-        Trusted by <strong class="text-primary">50,000+</strong> businesses to scale Design and Develop new Tech
-      </p>
+    <div class="absolute top-0 left-0 flex flex-col gap-6 -z-10">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="567"
+        height="558"
+        fill="none"
+      >
+        <g opacity=".5">
+          <g filter="url(#a-about)" style="mix-blend-mode: plus-lighter"
+            ><path
+              fill="url(#b-about)"
+              d="M-20.527-7.51 10.182-43l259.774 233.148-13.283 15.352-277.2-213.01Z"
+            ></path></g
+          >
+          <g filter="url(#c-about)" style="mix-blend-mode: plus-lighter"
+            ><path
+              fill="url(#d-about)"
+              d="M-52 13.659-20.788-25l267.328 224.459-13.502 16.722-285.04-202.522Z"
+            ></path></g
+          >
+          <g filter="url(#e-about)" style="mix-blend-mode: plus-lighter"
+            ><path
+              fill="url(#f-about)"
+              d="M-108.079-4.9-66.125-46l290.011 307.352-18.147 17.779-313.818-284.03Z"
+            ></path></g
+          >
+          <g filter="url(#g-about)"
+            ><ellipse
+              cx="143"
+              cy="252.378"
+              fill="#530DBB"
+              fill-opacity=".5"
+              rx="143"
+              ry="252.378"
+              transform="scale(-1 1) rotate(46.133 191.203 -117.756)"
+            ></ellipse></g
+          >
+        </g>
+        <defs>
+          <filter
+            id="a-about"
+            width="338.484"
+            height="296.5"
+            x="-44.527"
+            y="-67"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+            ><feFlood flood-opacity="0" result="BackgroundImageFix"
+            ></feFlood><feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend><feGaussianBlur
+              result="effect1_foregroundBlur"
+              stdDeviation="12"></feGaussianBlur></filter
+          >
+          <filter
+            id="c-about"
+            width="346.541"
+            height="289.181"
+            x="-76.001"
+            y="-49"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+            ><feFlood flood-opacity="0" result="BackgroundImageFix"
+            ></feFlood><feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend><feGaussianBlur
+              result="effect1_foregroundBlur"
+              stdDeviation="12"></feGaussianBlur></filter
+          >
+          <filter
+            id="e-about"
+            width="379.965"
+            height="373.131"
+            x="-132.079"
+            y="-70"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+            ><feFlood flood-opacity="0" result="BackgroundImageFix"
+            ></feFlood><feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend><feGaussianBlur
+              result="effect1_foregroundBlur"
+              stdDeviation="12"></feGaussianBlur></filter
+          >
+          <filter
+            id="g-about"
+            width="914.454"
+            height="906.103"
+            x="-348.178"
+            y="-349.061"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+            ><feFlood flood-opacity="0" result="BackgroundImageFix"
+            ></feFlood><feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend><feGaussianBlur
+              result="effect1_foregroundBlur"
+              stdDeviation="125"></feGaussianBlur></filter
+          >
+          <linearGradient
+            id="b-about"
+            x1="-5.173"
+            x2="258.744"
+            y1="-25.255"
+            y2="203.106"
+            gradientUnits="userSpaceOnUse"
+            ><stop stop-color="#7369FF"></stop><stop
+              offset="1"
+              stop-color="#6971FF"
+              stop-opacity="0"></stop></linearGradient
+          >
+          <linearGradient
+            id="d-about"
+            x1="-36.394"
+            x2="235.144"
+            y1="-5.671"
+            y2="213.574"
+            gradientUnits="userSpaceOnUse"
+            ><stop stop-color="#7369FF"></stop><stop
+              offset="1"
+              stop-color="#6971FF"
+              stop-opacity="0"></stop></linearGradient
+          >
+          <linearGradient
+            id="f-about"
+            x1="-87.102"
+            x2="208.568"
+            y1="-25.45"
+            y2="276.359"
+            gradientUnits="userSpaceOnUse"
+            ><stop stop-color="#7369FF"></stop><stop
+              offset="1"
+              stop-color="#6971FF"
+              stop-opacity="0"></stop></linearGradient
+          >
+        </defs>
+      </svg>
     </div>
-    <BrandsCarousel />
-  </div>
-</section>
+  </section>
+  <hr
+    class="h-px bg-linear-to-r from-transparent from-10% via-text-white/50 to-90% to-transparent border-0"
+  />
 
-<!-- Stats Section -->
-<section class="section relative">
-  <div class="container">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
-      {d.stats.map((stat: any) => (
-        <div class="text-center p-8 lg:p-10 lg:py-26 rounded-2xl bg-primary/10">
-          <div class="text-h2 lg:text-h1 leading-none font-bold font-secondary text-text-white mb-4">{stat.value}</div>
-          <p class="text-text text-h6">{stat.label}</p>
+  <!-- Trusted By Section -->
+  <section class="section-sm pt-16 xl:pt-20">
+    <div class="container">
+      <div class="text-center mb-10">
+        <p class="text-text-light text-base">
+          Trusted by <strong class="text-primary">50,000+</strong> businesses to scale
+          Design and Develop new Tech
+        </p>
+      </div>
+      <BrandsCarousel />
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section relative">
+    <div class="container">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+        {
+          d.stats.map((stat: any) => (
+            <div class="text-center p-8 lg:p-10 lg:py-26 rounded-2xl bg-primary/10">
+              <div class="text-h2 lg:text-h1 leading-none font-bold font-secondary text-text-white mb-4">
+                {stat.value}
+              </div>
+              <p class="text-text text-h6">{stat.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="-translate-y-140">
+      <GradientBlob />
+    </div>
+  </section>
+
+  <!-- CEO Letter Section -->
+  <OurStory />
+
+  <!-- Meet Our Team Section -->
+  <section class="section relative isolate overflow-hidden">
+    <div class="container">
+      <div class="section-container">
+        <div class="section-intro centralize">
+          <Badge title={d.our_team.badge} />
+          <h2 class="title hasHighlight" set:html={d.our_team.title} />
         </div>
-      ))}
-    </div>
-  </div>
-  <div class="-translate-y-140">
-    <GradientBlob />
-  </div>
-</section>
-
-<!-- CEO Letter Section -->
-<OurStory />
-
-<!-- Meet Our Team Section -->
-<section class="section relative isolate overflow-hidden">
-  <div class="container">
-    <div class="section-container">
-      <div class="section-intro centralize">
-        <Badge title={d.our_team.badge} />
-        <h2 class="title hasHighlight" set:html={d.our_team.title} />
-      </div>
-      <div class="section-content">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {d.our_team.members.map((member: any) => (
-            <TeamCard image={member.image} name={member.name} role={member.role} />
-          ))}
+        <div class="section-content">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+              d.our_team.members.map((member: any) => (
+                <TeamCard
+                  image={member.image}
+                  name={member.name}
+                  role={member.role}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Core Values Section -->
-<section class="section-box mx-5 relative isolate overflow-hidden">
-  <div class="container">
-    <div class="section-container">
-      <div class="section-intro centralize">
-        <Badge title={d.core_values.badge} />
-        <h2 class="title hasHighlight" set:html={d.core_values.title} />
-        <p class="subtitle">{d.core_values.subtitle}</p>
-      </div>
-      <div class="section-content">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 border-r border-text-light/5 border-b">
-          {d.core_values.items.map((item: any) => (
-            <FeatureCard logo={item.logo} title={item.title} isStarred={item.isStarred} />
-          ))}
+  <!-- Core Values Section -->
+  <section class="section-box mx-5 relative isolate overflow-hidden">
+    <div class="container">
+      <div class="section-container">
+        <div class="section-intro centralize">
+          <Badge title={d.core_values.badge} />
+          <h2 class="title hasHighlight" set:html={d.core_values.title} />
+          <p class="subtitle">{d.core_values.subtitle}</p>
+        </div>
+        <div class="section-content">
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 border-r border-text-light/5 border-b"
+          >
+            {
+              d.core_values.items.map((item: any) => (
+                <FeatureCard
+                  logo={item.logo}
+                  title={item.title}
+                  isStarred={item.isStarred}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="absolute bottom-0 left-0 -z-10">
-    <svg width="1880" height="706" viewBox="0 0 1880 706" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_f_about_cv)">
-    <path d="M265 598.973C173.931 658.402 -22.5806 807.13 -125 857.275V910H1750C1691.94 910 1142.76 643.191 986.456 530.174C472.864 158.816 488.018 453.438 265 598.973Z" fill="url(#paint0_linear_about_cv)"/>
-    </g>
-    <defs>
-    <filter id="filter0_f_about_cv" x="-475" y="0" width="2575" height="1260" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="175" result="effect1"/></filter>
-    <linearGradient id="paint0_linear_about_cv" x1="641.165" y1="334" x2="641.165" y2="909.999" gradientUnits="userSpaceOnUse"><stop stop-color="#6421FF"/><stop offset="1" stop-color="#7345FF"/></linearGradient>
-    </defs>
-    </svg>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="section relative">
-  <div class="container">
-    <div class="section-container">
-      <div class="section-intro centralize">
-        <Badge title={d.testimonials.badge} />
-        <h2 class="title hasHighlight" set:html={d.testimonials.title} />
-      </div>
-      <div class="section-content">
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
-          {d.testimonials.items.map((item: any) => (
-            <TestimonialCard poster={item.poster} />
-          ))}
-        </div>
-      </div>
+    <div class="absolute bottom-0 left-0 -z-10">
+      <svg
+        width="1880"
+        height="706"
+        viewBox="0 0 1880 706"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_about_cv)">
+          <path
+            d="M265 598.973C173.931 658.402 -22.5806 807.13 -125 857.275V910H1750C1691.94 910 1142.76 643.191 986.456 530.174C472.864 158.816 488.018 453.438 265 598.973Z"
+            fill="url(#paint0_linear_about_cv)"></path>
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_about_cv"
+            x="-475"
+            y="0"
+            width="2575"
+            height="1260"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+            ><feFlood flood-opacity="0" result="BackgroundImageFix"
+            ></feFlood><feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend><feGaussianBlur
+              stdDeviation="175"
+              result="effect1"></feGaussianBlur></filter
+          >
+          <linearGradient
+            id="paint0_linear_about_cv"
+            x1="641.165"
+            y1="334"
+            x2="641.165"
+            y2="909.999"
+            gradientUnits="userSpaceOnUse"
+            ><stop stop-color="#6421FF"></stop><stop
+              offset="1"
+              stop-color="#7345FF"></stop></linearGradient
+          >
+        </defs>
+      </svg>
     </div>
-  </div>
-  <GradientBlob />
-</section>
+  </section>
 
-<!-- FAQ -->
-<Faq />
+  <!-- Testimonials Section -->
+  <Testimonial />
 
-<!-- Call to Action -->
-<CallToAction />
+  <!-- FAQ -->
+  <Faq />
+
+  <!-- Call to Action -->
+  <CallToAction />
 </Base>

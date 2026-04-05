@@ -10,7 +10,7 @@ const d = ctaInfo.data;
   <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
     <div class="section-container">
       <div class="section-intro centralize">
-        <Badge title={d.badge} />
+        <Badge title={d.badge ? d.badge : ""} />
         <h2 class="title hasHighlight lg:col-7" set:html={d.title} />
         <p class="subtitle text-h6-sm lg:col-6">{d.description}</p>
         {d.button && d.button.link && (

@@ -28,12 +28,28 @@ what_we_offer:
 offers:
   - logo: "/images/icons/healthicon.svg"
     title: "Health & Wellness"
+    list:
+      - "Comprehensive health insurance"
+      - "Mental health support"
+      - "Wellness programs"
   - logo: "/images/icons/paidtimeoff.svg"
     title: "Paid Time Off"
+    list:
+      - "Generous vacation policy"
+      - "Sick leave"
+      - "Parental leave"
   - logo: "/images/icons/wellbeing.svg"
     title: "Financial Well-being"
+    list:
+      - "Competitive salaries"
+      - "Retirement plans"
+      - "Financial planning resources"
   - logo: "/images/icons/careerdevelopment.svg"
     title: "Career Development"
+    list:
+      - "Professional development budget"
+      - "Mentorship programs"
+      - "Career growth opportunities"
 
 staff_testimonials:
   - quote: "They truly understood our business at a depth, offering data-driven updates on time, we designed and managed a project to drive value, including time, and integrate productively. It offers the full gamut"

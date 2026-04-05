@@ -38,6 +38,6 @@ integrations:
     title: "Internal Dashboards"
   - icon: "fa-solid fa-code text-primary"
     title: "Private APIs"
-  - icon: "fa-solid fa-webhook text-primary"
+  - icon: "fa-solid fa-gear text-primary"
     title: "Webhook Systems"
 ---

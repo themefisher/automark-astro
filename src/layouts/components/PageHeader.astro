@@ -1,15 +1,15 @@
 ---
 interface Props {
   title: string;
+  subtitle: string;
 }
-const { title } = Astro.props;
+const { title,subtitle } = Astro.props;
 ---
 <section class="section-ph pb-28 mb-0 overflow-hidden">
   <div class="container">
     <div class="lg:max-w-3xl mx-auto text-center">
       <h1 class="hasHighlight mb-6" set:html={title} />
-      <p class="mb-5 text-lg">The specific details can vary depending on the nature of the services provided.
-However, there are several common elements that are typically included</p>
+      <p class="mb-5 text-lg" set:html={subtitle} />
     <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
       <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
     </div>

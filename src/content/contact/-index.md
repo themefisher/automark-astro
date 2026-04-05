@@ -6,6 +6,7 @@ draft: false
 
 page_header:
   title: "Have a question? <strong>Send us a message</strong>"
+  subtitle: "Our team is here to help. Whether you have a question about features, pricing, or anything else, our support team is ready to assist you." 
 
 contact_info:
   - type: "email"
