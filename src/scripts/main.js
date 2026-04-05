@@ -3,26 +3,6 @@
 (function () {
   "use strict";
 
-  // Testimonial Slider
-  // ----------------------------------------
-  const testimonialSwiper = new Swiper(".testimonial-slider", {
-    spaceBetween: 24,
-    loop: true,
-    pagination: {
-      el: ".testimonial-slider-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
   // Tab
   // ----------------------------------------
   function setActiveTab(tabGroup, tabName) {
@@ -208,37 +188,6 @@
     });
   };
 
-  // TODO: Work on this animation later
-  const pricingToggler = () => {
-    let isYearly = false;
-
-    const toggle = document.getElementById("priceToggle");
-    const monthlyEls = document.querySelectorAll("[data-price-tag-monthly]");
-    const yearlyEls = document.querySelectorAll("[data-price-tag-yearly]");
-
-    toggle.addEventListener("click", () => {
-      isYearly = !isYearly;
-      toggle.classList.toggle("active", isYearly);
-
-      if (isYearly) {
-        monthlyEls.forEach((el, i) => {
-          setTimeout(() => el.classList.add("inactive"), i * 150);
-        });
-
-        yearlyEls.forEach((el, i) => {
-          setTimeout(() => el.classList.remove("inactive"), i * 150);
-        });
-      } else {
-        monthlyEls.forEach((el, i) => {
-          setTimeout(() => el.classList.remove("inactive"), i * 150);
-        });
-
-        yearlyEls.forEach((el, i) => {
-          setTimeout(() => el.classList.add("inactive"), i * 150);
-        });
-      }
-    });
-  };
 
   // Header: Reveal / Hide based on scroll direction after 200px
   const headerReveal = () => {
@@ -267,7 +216,6 @@
   window.addEventListener("DOMContentLoaded", () => {
     bnCards();
     randomComparisonRowsImagesFiller();
-    // pricingToggler();
     testimonialVideosInit();
     headerReveal();
   });

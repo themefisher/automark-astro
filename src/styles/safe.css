@@ -11,11 +11,3 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply max-lg:block;
 }
 
-/* swiper pagination */
-.swiper-pagination-bullet {
-  @apply h-2.5 w-2.5 bg-light opacity-100;
-}
-
-.swiper-pagination-bullet-active {
-  @apply h-4 w-4 bg-primary;
-}

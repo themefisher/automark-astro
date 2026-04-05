@@ -20,6 +20,7 @@
 
   "params": {
     "contact_form_action": "#",
+    "apply_form_action": "#",
     "copyright": "Copyright &copy; 2026 <strong><a target=\"_blank\" href=\"https://themefisher.com/\">Themefisher</a></strong> All Rights Reserved",
     "footer_tagline": "Empowering Marketing businesses through intelligent automation.",
     "footer_email": "contact@Automark.com",

@@ -34,7 +34,7 @@ const sectionContent = content ?? d.page_header?.content ?? "";
       {
         isHome && (
           <div class="section-intro centralize">
-            <Badge title={sectionBadge} />
+       
             <h2 class="title hasHighlight" set:html={sectionTitle} />
             {sectionContent && <p>{sectionContent}</p>}
           </div>

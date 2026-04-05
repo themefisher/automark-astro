@@ -6,18 +6,18 @@
 
 @theme {
   /* === Colors === */
-  --color-primary: #937aff;
-  --color-secondary: #ff5353;
-  --color-body: #03010e;
+  --color-primary: #937AFF;
+  --color-secondary: #FF5353;
+  --color-body: #03010E;
   --color-border: #202128;
-  --color-light: #0b0c17;
+  --color-light: #0B0C17;
   --color-dark: #040404;
-  --color-gradient-start: #4d36d0;
-  --color-gradient-end: #8474fe;
-  --color-text: #dad4de;
-  --color-text-dark: #817e84;
-  --color-text-light: #e5e5e5;
-  --color-text-white: #ffffff;
+  --color-gradient-start: #4D36D0;
+  --color-gradient-end: #8474FE;
+  --color-text: #DAD4DE;
+  --color-text-dark: #817E84;
+  --color-text-light: #E5E5E5;
+  --color-text-white: #FFFFFF;
 
   /* === Font Families === */
   --font-primary: Inter Tight, sans-serif;
