@@ -13,15 +13,12 @@ const Youtube = ({
     import("@justinribeiro/lite-youtube");
   }, []);
 
-  // @ts-ignore
-  return (
-    <lite-youtube
-      className="rounded-lg"
-      videoid={id}
-      videotitle={title}
-      {...rest}
-    />
-  );
+  return React.createElement("lite-youtube", {
+    className: "rounded-lg",
+    videoid: id,
+    videotitle: title,
+    ...rest,
+  });
 };
 
 export default Youtube;
