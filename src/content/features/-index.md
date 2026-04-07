@@ -54,16 +54,16 @@ service_features:
       image: "/images/features/service-feature-1.svg"
       reverse: false
       items:
-        - icon: "fa-solid fa-zap"
+        - icon: FaZap
           title: "Lightning Fast Performance"
           content: "Optimized for speed with response times under 100ms."
-        - icon: "fa-solid fa-brain"
+        - icon: FaBrain
           title: "AI-Powered Intelligence"
           content: "Machine learning algorithms that learn your business patterns."
-        - icon: "fa-solid fa-lock"
+        - icon: FaLock
           title: "Enterprise Security"
           content: "Bank-level encryption and GDPR compliance included."
-        - icon: "fa-solid fa-cubes"
+        - icon: FaCubes
           title: "Modular Architecture"
           content: "Scale features independently based on your needs."
 
@@ -71,16 +71,16 @@ service_features:
       image: "/images/features/service-feature-2.svg"
       reverse: true
       items:
-        - icon: "fa-solid fa-chart-simple"
+        - icon: FaChartSimple
           title: "Real time data"
           content: "Get the data you need to make smarter decisions."
-        - icon: "fa-solid fa-rocket"
+        - icon: FaRocket
           title: "Fast and Easy to use"
           content: "Easily to convert API with just a few clicks."
-        - icon: "fa-solid fa-shield-halved"
+        - icon: FaShieldHalved
           title: "Safely Security"
           content: "Your data is protected with advanced encryption."
-        - icon: "fa-solid fa-table-cells-large"
+        - icon: FaTableCellsLarge
           title: "Powerfull App"
           content: "Provide simple and minimalist dashboard."
 ---

@@ -6,7 +6,7 @@ title: "Real Stories From <strong>Owners</strong>"
 testimonials:
   - name: "Marvin McKinney"
     designation: "Web Designer"
-    poster: "/images/testimonials/1.jpg"
+    poster: "/images/testimonials/1.png"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
     video: /showcase.mp4
 

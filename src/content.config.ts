@@ -447,7 +447,13 @@ const integrationsCollection = defineCollection({
     page_header: z.object({ title: z.string() }),
     integrations: z.object({
       enable: z.boolean(),
-      items: z.array(z.object({ icon: z.string(), title: z.string() })),
+      items: z.array(
+        z.object({
+          icon: z.string(),
+          title: z.string(),
+          class: z.string().optional(),
+        }),
+      ),
     }),
   }),
 });

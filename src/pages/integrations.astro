@@ -45,7 +45,7 @@ const integrationsData: Integrations = integrations.data;
         <div class="container">
           <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
             {integrationsData.integrations.items.map((item: any) => (
-              <IntegrationCard icon={item.icon} title={item.title} />
+              <IntegrationCard icon={item.icon} title={item.title} class={item.class} />
             ))}
           </div>
         </div>
