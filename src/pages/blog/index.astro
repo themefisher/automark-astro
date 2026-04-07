@@ -58,7 +58,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
       <section class="section pt-0">
         <div class="container">
           <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
-            <div class="overflow-hidden rounded-2xl border border-text-white/10">
+            <div class="overflow-hidden rounded-2xl border border-white/10">
               <ImageMod
                 src={
                   featuredPost.data.image ?? "/images/blog/featured-cover.png"
@@ -83,7 +83,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
             />
           </div>
 
-          <hr class="mt-16 h-px border-0 bg-linear-to-r from-transparent via-text-white/15 to-transparent" />
+          <hr class="mt-16 h-px border-0 bg-linear-to-r from-transparent via-white/15 to-transparent" />
         </div>
       </section>
     )

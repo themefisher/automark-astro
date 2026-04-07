@@ -67,7 +67,7 @@ const jobs = await getSinglePage("careers");
             ))}
           </div>
         </div>
-        <hr class="h-px bg-linear-to-r from-transparent from-3% via-text-white/40 to-97% to-transparent border-0 my-20" />
+        <hr class="h-px bg-linear-to-r from-transparent from-3% via-white/40 to-97% to-transparent border-0 my-20" />
       </section>
     )
   }
@@ -109,13 +109,27 @@ const jobs = await getSinglePage("careers");
         <div class="container">
           <div class="section-container">
             <div class="section-intro centralize">
-              <h2 class="title">What Our Staff Say</h2>
+              <h2 class="title">{pageData.staff_testimonials?.title}</h2>
             </div>
             <div class="section-content">
               <div class="grid lg:grid-cols-2 gap-8">
                 {pageData.staff_testimonials?.items?.map((t: any) => (
-                  <div class="rounded-2xl border border-text-white/15 bg-linear-[114deg] from-transparent from-5% to-primary-light/10 to-86% p-8 md:p-10">
-                    <blockquote class="text-text leading-relaxed mb-8">
+                  <div class="rounded-2xl  bg-white/5 p-8 md:p-10">
+                    <div class="mb-6">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="45"
+                        height="28"
+                        viewBox="0 0 45 28"
+                        fill="none"
+                      >
+                        <path
+                          d="M15.3955 0V10.9561H24.8691L16.5791 28H0L13.0264 0H15.3955ZM36.7109 0V10.9561H45L36.7109 28H21.3154L34.3418 0H36.7109Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <blockquote class="text-text leading-relaxed mb-8 text-xl font-medium">
                       {t.quote}
                     </blockquote>
                     <div class="flex items-center gap-4">

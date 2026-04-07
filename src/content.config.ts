@@ -416,6 +416,7 @@ const careersCollection = defineCollection({
     staff_testimonials: z
       .object({
         enable: z.boolean(),
+        title: z.string(),
         items: z.array(
           z.object({
             quote: z.string(),

@@ -55,6 +55,7 @@ what_we_offer:
 
 staff_testimonials:
   enable: true
+  title: What Our Staff Say
   items:
     - quote: "They truly understood our business at a depth, offering data-driven updates on time, we designed and managed a project to drive value, including time, and integrate productively. It offers the full gamut"
       avatar: "/images/avatar.png"

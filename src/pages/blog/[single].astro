@@ -38,7 +38,7 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
           set:html={markdownify(postData.title)}
         />
 
-        <div class="overflow-hidden rounded-2xl border border-text-white/10">
+        <div class="overflow-hidden rounded-2xl border border-white/10">
           <ImageMod
             src={postData.image ?? "/images/blog/featured-cover.png"}
             alt={postData.title}
@@ -77,7 +77,7 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
         </div>
 
         <hr
-          class="mt-8 h-px border-0 bg-linear-to-r from-transparent via-text-white/15 to-transparent"
+          class="mt-8 h-px border-0 bg-linear-to-r from-transparent via-white/15 to-transparent"
         />
       </div>
     </div>
