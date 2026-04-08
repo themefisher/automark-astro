@@ -30,7 +30,10 @@ const sectionContent = content ?? pricingData.page_header?.content ?? "";
       {
         isHome && (
           <div class="section-intro centralize">
-            <h2 class="title hasHighlight" set:html={sectionTitle} />
+            <h2
+              class="title hasHighlight animate-split-text"
+              set:html={sectionTitle}
+            />
             {sectionContent && <p>{sectionContent}</p>}
           </div>
         )

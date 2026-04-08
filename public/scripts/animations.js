@@ -9,12 +9,14 @@ import { sporeCanvas } from "./particleCanvus.js";
   // On < XL: starts scaled 0.8, rotationX 15 → scrolls to normal
   function heroVideo() {
     const mm = gsap.matchMedia();
-    const gsapVideoShowcase = document.querySelectorAll("[data-gsap-video-showcase]");
+    const gsapVideoShowcase = document.querySelectorAll(
+      "[data-gsap-video-showcase]",
+    );
     if (!gsapVideoShowcase.length) return;
 
     gsapVideoShowcase.forEach((el) => {
       mm.add("(min-width: 1280px)", () => {
-        gsap.set(el, { scale: 0.8, rotationX: 10, top: -250 });
+        gsap.set(el, { scale: 0.8, rotationX: 10, y: -250 });
         gsap.to(el, {
           scrollTrigger: {
             trigger: el,
@@ -25,7 +27,7 @@ import { sporeCanvas } from "./particleCanvus.js";
           },
           scale: 1,
           rotationX: 0,
-          top: 0,
+          y: 0,
           ease: "none",
         });
       });
@@ -80,7 +82,7 @@ import { sporeCanvas } from "./particleCanvus.js";
       gsap.fromTo(
         imgs,
         { opacity: 0, filter: "blur(10px)", y: -30 },
-        { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.9, stagger: 0.15 }
+        { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.9, stagger: 0.15 },
       );
 
       gsap.to(imgs, {
@@ -102,12 +104,12 @@ import { sporeCanvas } from "./particleCanvus.js";
     const targetElementClassName = ".heroSporeCanvas";
     sporeCanvas(
       targetElementClassName,
-      140,   // particle count
-      0.2,   // min size
-      1.6,   // max size
-      0.0,   // min speed
-      0.1,   // max speed
-      800    // canvas size
+      140, // particle count
+      0.2, // min size
+      1.6, // max size
+      0.0, // min speed
+      0.1, // max speed
+      800, // canvas size
     );
   }
 
@@ -132,8 +134,12 @@ import { sporeCanvas } from "./particleCanvus.js";
         labels[1]?.classList.remove("active");
       }
 
-      const monthlyElements = document.querySelectorAll("[data-price-tag-monthly]");
-      const yearlyElements = document.querySelectorAll("[data-price-tag-yearly]");
+      const monthlyElements = document.querySelectorAll(
+        "[data-price-tag-monthly]",
+      );
+      const yearlyElements = document.querySelectorAll(
+        "[data-price-tag-yearly]",
+      );
       const elementsToHide = isYearly ? monthlyElements : yearlyElements;
       const elementsToShow = isYearly ? yearlyElements : monthlyElements;
 
@@ -153,17 +159,82 @@ import { sporeCanvas } from "./particleCanvus.js";
     });
   }
 
-  function init() {
-    // Init Lenis smooth scroll
-    const lenis = new Lenis({ autoRaf: true });
+  function textSplitAnimation() {
+    const elements = document.querySelectorAll(".animate-split-text");
+    if (!elements.length) return;
 
-    // Register GSAP ScrollTrigger
+    elements.forEach((el) => {
+      const text = el.textContent;
+      el.innerHTML = "";
+
+      const wordsAndSpaces = text.match(/\S+|\s+/g) || [];
+      const allChars = [];
+
+      wordsAndSpaces.forEach((part) => {
+        if (/^\s+$/.test(part)) {
+          const space = document.createElement("span");
+          space.style.whiteSpace = "pre";
+          space.textContent = part;
+          el.appendChild(space);
+        } else {
+          // Standard inline-block without masks to prevent any layout collapse/shifts during transition
+          const wordWrap = document.createElement("span");
+          wordWrap.style.display = "inline-block";
+
+          part.split("").forEach((char) => {
+            const charWrap = document.createElement("span");
+            charWrap.style.display = "inline-block";
+            charWrap.textContent = char;
+            charWrap.style.willChange = "transform, opacity";
+
+            wordWrap.appendChild(charWrap);
+            allChars.push(charWrap);
+          });
+
+          el.appendChild(wordWrap);
+        }
+      });
+
+      // Simple character fade and glide sequence
+      gsap.fromTo(
+        allChars,
+        { y: 25, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.015,
+          ease: "power3.out",
+          force3D: true,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+    });
+  }
+
+  function init() {
     gsap.registerPlugin(ScrollTrigger);
+
+    // Official Lenis + GSAP synchronization
+    const lenis = new Lenis({ autoRaf: false });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     heroVideo();
     updateTrustedPartners();
     sporesEffect();
     pricingToggle();
+    textSplitAnimation();
   }
 
   // Run immediately — module scripts are deferred, DOM is already ready
