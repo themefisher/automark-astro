@@ -71,3 +71,21 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--color-text-light);
   transition: background-color 5000s ease-in-out 0s;
 }
+
+/* Lenis Scroll behavior */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
