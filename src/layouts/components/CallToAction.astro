@@ -15,7 +15,10 @@ if (!ctaData.enable) return;
     <div class="section-container">
       <div class="section-intro centralize">
         <Badge title={ctaData.badge ? ctaData.badge : ""} />
-        <h2 class="title hasHighlight lg:col-7" set:html={ctaData.title} />
+        <h2
+          class="title hasHighlight lg:col-7 animate-split-text"
+          set:html={ctaData.title}
+        />
         <p class="subtitle text-h6-sm lg:col-6">{ctaData.description}</p>
         {
           ctaData.button && ctaData.button.enable && ctaData.button.link && (

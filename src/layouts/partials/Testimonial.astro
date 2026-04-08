@@ -14,7 +14,10 @@ const testimonialData: TestimonialSection = testimonialEntry.data;
       <div class="container">
         <div class="section-container">
           <div class="section-intro centralize">
-            <h2 class="title hasHighlight" set:html={testimonialData.title} />
+            <h2
+              class="title hasHighlight animate-split-text"
+              set:html={testimonialData.title}
+            />
           </div>
           <div class="section-content">
             <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
