@@ -129,6 +129,20 @@ const { title, meta_title, description, image, noindex, canonical } =
       rel="stylesheet"
       href="https://unpkg.com/lenis@1.3.17/dist/lenis.css"
     />
+
+    <!-- CORE SCRIPTS - Loaded asynchronously via defer to restore PageSpeed -->
+    <!-- GSAP CDN -->
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- LENIS CDN -->
+    <script is:inline defer src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+    
+    <!-- Main UI interactions -->
+    <script is:inline defer src="/scripts/main.js"></script>
+    
+    <!-- Animations (Modules are deferred automatically by browsers) -->
+    <script is:inline type="module" src="/scripts/animations.js"></script>
   </head>
   <body>
      {/* google tag manager noscript */}
@@ -144,21 +158,5 @@ const { title, meta_title, description, image, noindex, canonical } =
       <slot />
     </main>
     <Footer />
-
-    <!-- GSAP CDN -->
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"
-    ></script>
-    <!-- LENIS CDN -->
-    <script is:inline src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"
-    ></script>
-    <!-- Main Script (runs sync since DOM is already parsed at end of body) -->
-    <script is:inline src="/scripts/main.js"></script>
-    <!-- Animations Script (ES module with GSAP/Lenis/spores) -->
-    <script is:inline type="module" src="/scripts/animations.js"></script>
   </body>
 </html>
