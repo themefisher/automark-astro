@@ -1,8 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
-import IntegrationCard from "@/layouts/components/IntegrationCard.astro";
-import Faq from "@/layouts/components/Faq.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import IntegrationCard from "@/layouts/components/IntegrationCard.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { Integrations } from "@/types";
@@ -11,11 +11,7 @@ const integrations = await getListPage("integrations", "-index");
 const integrationsData: Integrations = integrations.data;
 ---
 
-<Base
-  title={integrationsData.title}
-  meta_title={integrationsData.meta_title}
-  description={integrationsData.description ?? ""}
->
+<Base {...integrationsData}>
   <!-- Page Header -->
   <section class="section-ph pb-10 relative">
     <div class="container relative">
@@ -45,7 +41,11 @@ const integrationsData: Integrations = integrations.data;
         <div class="container">
           <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
             {integrationsData.integrations.items.map((item: any) => (
-              <IntegrationCard icon={item.icon} title={item.title} class={item.class} />
+              <IntegrationCard
+                icon={item.icon}
+                title={item.title}
+                class={item.class}
+              />
             ))}
           </div>
         </div>

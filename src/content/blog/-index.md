@@ -2,6 +2,7 @@
 title: "Blog"
 meta_title: "Blog - Automark"
 description: "Stay informed with the latest news, insights and guides from Automark on AI-driven marketing automation."
+image: ""
 draft: false
 
 page_header:

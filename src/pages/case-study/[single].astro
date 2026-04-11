@@ -1,7 +1,7 @@
 ---
-import ImageMod from "@/layouts/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -17,12 +17,7 @@ const { study } = Astro.props;
 const studyData = study.data;
 ---
 
-<Base
-  title={studyData.title}
-  meta_title={studyData.meta_title}
-  description={studyData.description}
-  image={studyData.image}
->
+<Base {...studyData}>
   <!-- Page Header -->
   <section class="section-ph pb-8 relative overflow-hidden">
     <div class="container relative">

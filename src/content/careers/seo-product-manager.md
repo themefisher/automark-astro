@@ -2,6 +2,7 @@
 title: "SEO Product Manager"
 meta_title: "SEO Product Manager - Automark Careers"
 description: "Lead product strategy, collaborate with engineering, and shape the future of our analytics platform."
+image: ""
 type: "Full time"
 location: "California"
 banner_image: "/images/careers/career-details-banner.png"

@@ -1,10 +1,10 @@
 ---
+import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
 import Faq from "@/layouts/components/Faq.astro";
 import PageHeader from "@/layouts/components/PageHeader.astro";
 import { getListPage } from "@/lib/contentParser.astro";
-import config from "@/config/config.json";
 import type { Contact } from "@/types";
 
 const contact = await getListPage("contact", "-index");
@@ -14,11 +14,7 @@ const {
 } = config;
 ---
 
-<Base
-  title={contactData.title}
-  meta_title={contactData.meta_title}
-  description={contactData.description}
->
+<Base {...contactData}>
   <PageHeader
     title={contactData.page_header!.title}
     subtitle={contactData.page_header!.subtitle}

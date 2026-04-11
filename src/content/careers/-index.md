@@ -2,6 +2,7 @@
 title: "Careers"
 meta_title: "Careers at Automark - Build the Future With Us"
 description: "Join Automark and help build the future of AI-powered marketing automation."
+image: ""
 draft: false
 
 page_header:

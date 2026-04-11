@@ -2,6 +2,7 @@
 title: "Pricing"
 meta_title: "Pricing - Automark"
 description: "Simple, transparent pricing for every stage of your business growth."
+image: ""
 draft: false
 
 page_header:

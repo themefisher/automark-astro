@@ -2,6 +2,7 @@
 title: "About Us"
 meta_title: "About Us - Automark"
 description: "Your Growth-Obsessed Marketing Partner."
+image: ""
 draft: false
 
 page_header:

@@ -2,6 +2,7 @@
 title: "Senior Frontend Developer"
 meta_title: "Senior Frontend Developer - Automark Careers"
 description: "Build and maintain responsive web applications using modern frameworks and best practices."
+image: ""
 type: "Full time"
 location: "New York"
 banner_image: "/images/careers/career-details-banner.png"

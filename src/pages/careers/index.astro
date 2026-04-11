@@ -1,12 +1,12 @@
 ---
 import Base from "@/layouts/Base.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
 import CareerCard from "@/layouts/components/CareerCard.astro";
-import ValueCard from "@/layouts/components/ValueCard.astro";
+import Faq from "@/layouts/components/Faq.astro";
 import GradientBlob from "@/layouts/components/GradientBlob.astro";
 import ImageMod from "@/layouts/components/ImageMod.astro";
-import Faq from "@/layouts/components/Faq.astro";
-import CallToAction from "@/layouts/components/CallToAction.astro";
-import { getSinglePage, getListPage } from "@/lib/contentParser.astro";
+import ValueCard from "@/layouts/components/ValueCard.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { Careers } from "@/types";
 
@@ -18,11 +18,7 @@ const pageData: Careers = careersIndex.data;
 const jobs = await getSinglePage("careers");
 ---
 
-<Base
-  title={pageData.title}
-  meta_title={pageData.meta_title ?? pageData.title}
-  description={pageData.description ?? ""}
->
+<Base {...pageData}>
   <!-- Page Header -->
   <section class="section-ph pb-10 relative">
     <div class="container relative">

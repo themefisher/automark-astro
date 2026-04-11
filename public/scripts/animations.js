@@ -1,5 +1,5 @@
 /* global gsap, ScrollTrigger, Lenis */
-import { sporeCanvas } from "./particleCanvus.js";
+import { sporeCanvas } from "./particleCanvas.js";
 
 (function () {
   "use strict";

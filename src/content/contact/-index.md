@@ -2,6 +2,7 @@
 title: "Contact Us"
 meta_title: "Contact Us - Automark"
 description: "Have a question? Send us a message"
+image: ""
 draft: false
 
 page_header:

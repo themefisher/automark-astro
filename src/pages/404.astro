@@ -3,11 +3,17 @@ import Base from "@/layouts/Base.astro";
 ---
 
 <Base title="Page Not Found">
-  <section class="section-sm text-center">
-    <div class="container">
+  <section class="section-ph text-center relative overflow-hidden">
+    <div class="container relative">
+      <div class="absolute top-0 left-0 w-full">
+        <div class="h-100 w-full overflow-hidden -translate-y-10">
+          <canvas class="heroSporeCanvas w-full"></canvas>
+        </div>
+      </div>
+
       <div class="row justify-center">
         <div class="sm:col-10 md:col-8 lg:col-6">
-          <span class="text-[8rem] block font-bold text-text-dark"> 404 </span>
+          <span class="text-[8rem] block font-bold text-primary"> 404 </span>
           <h1 class="h2 mb-4">Page not found</h1>
           <div class="content">
             <p>
@@ -18,6 +24,12 @@ import Base from "@/layouts/Base.astro";
           <a href="/" class="btn btn-primary mt-8">Back to home</a>
         </div>
       </div>
+    </div>
+
+    <div
+      class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
+      style="background: radial-gradient(circle, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 78%, transparent) 20%, transparent 70%);"
+    >
     </div>
   </section>
 </Base>

@@ -5,7 +5,7 @@ description: "Find answers to common questions about our product and services."
 button:
   enable: true
   label: "Get in Touch"
-  link: "/contact"
+  link: "https://themefisher.com/products/automark-astro"
 items:
   - question: "What is AI-powered design and development?"
     answer: "AI-powered design and development uses machine learning to automate and enhance creative and technical tasks, from generating layouts to writing code, helping teams work faster and smarter."

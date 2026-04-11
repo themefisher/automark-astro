@@ -2,6 +2,7 @@
 title: "Integrations"
 meta_title: "Integrations - Automark"
 description: "Seamlessly connect Automark with your favorite tools and platforms."
+image: ""
 draft: false
 
 page_header:

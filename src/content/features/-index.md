@@ -2,6 +2,7 @@
 title: "Features"
 meta_title: "Features - Automark"
 description: "Automark is your AI-powered marketing and sales engine — built to attract, engage, convert, and retain customers on autopilot."
+image: ""
 draft: false
 
 banner:

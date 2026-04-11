@@ -6,9 +6,6 @@
 /* Auto-generated theme from "theme.json"*/
 @import "./generated-theme.css";
 
-/* Import Custom Fonts */
-
-@import "./variables.css";
 @import "./safe.css";
 @import "./utilities.css";
 

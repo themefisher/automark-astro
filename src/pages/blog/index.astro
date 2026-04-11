@@ -1,13 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro";
 import BlogCard from "@/layouts/components/BlogCard.astro";
+import CallToAction from "@/layouts/components/CallToAction.astro";
 import FeaturedPostCard from "@/layouts/components/FeaturedPostCard.astro";
 import ImageMod from "@/layouts/components/ImageMod.astro";
-import CallToAction from "@/layouts/components/CallToAction.astro";
-import { getSinglePage, getListPage } from "@/lib/contentParser.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import dateFormat from "@/lib/utils/dateFormat";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import { markdownify } from "@/lib/utils/textConverter";
-import dateFormat from "@/lib/utils/dateFormat";
 import type { BlogIndex } from "@/types";
 
 // Page-level content from content collection
@@ -25,11 +25,7 @@ const featuredPost = featuredId
 const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 ---
 
-<Base
-  title={pageData.title}
-  meta_title={pageData.meta_title ?? pageData.title}
-  description={pageData.description ?? ""}
->
+<Base {...pageData}>
   <!-- Page Header -->
   <section class="section-ph pb-10 relative">
     <div class="container relative">

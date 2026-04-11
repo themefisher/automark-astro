@@ -206,10 +206,47 @@
 
     // Header reveal/hide on scroll direction
     const header = document.querySelector(".header");
+    const navToggle = document.getElementById("nav-toggle");
+
+    // Nav menu background expand/collapse
+    const navMenuBgToggle = () => {
+      const navToggleEl = document.getElementById("nav-toggle");
+      const navMenuBg = document.getElementById("nav-menu-bg");
+      const headerEl = document.querySelector(".header");
+
+      if (
+        !(navToggleEl instanceof HTMLInputElement) ||
+        !(navMenuBg instanceof HTMLElement) ||
+        !(headerEl instanceof HTMLElement)
+      ) {
+        return;
+      }
+
+      const updateBgHeight = () => {
+        const rect = headerEl.getBoundingClientRect();
+        if (navToggleEl.checked) {
+          navMenuBg.style.height = rect.height + "px";
+        } else {
+          navMenuBg.style.height = "0px";
+        }
+      };
+
+      navToggleEl.addEventListener("change", updateBgHeight);
+      window.addEventListener("resize", updateBgHeight);
+      updateBgHeight();
+    };
+    navMenuBgToggle();
+
     if (header) {
       let lastScrollY = window.scrollY;
       const scrollThreshold = 200;
       window.addEventListener("scroll", () => {
+        if (navToggle && navToggle.checked) {
+          header.classList.remove("hide");
+          lastScrollY = window.scrollY;
+          return;
+        }
+
         if (window.scrollY > scrollThreshold) {
           if (window.scrollY < lastScrollY) {
             header.classList.remove("hide");

@@ -2,6 +2,7 @@
 title: "Case Studies"
 meta_title: "Case Studies - Automark"
 description: "See how businesses like yours are scaling with Automark."
+image: ""
 draft: false
 
 page_header:

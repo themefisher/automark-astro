@@ -1,28 +1,24 @@
 ---
-import ImageMod from "@/layouts/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
 import Badge from "@/layouts/components/Badge.astro";
-import TeamCard from "@/layouts/components/TeamCard.astro";
-import GradientBlob from "@/layouts/components/GradientBlob.astro";
 import BrandsCarousel from "@/layouts/components/BrandsCarousel.astro";
-import Faq from "@/layouts/components/Faq.astro";
-import OurStory from "@/layouts/components/OurStory.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import GradientBlob from "@/layouts/components/GradientBlob.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
+import OurStory from "@/layouts/components/OurStory.astro";
+import TeamCard from "@/layouts/components/TeamCard.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import Testimonial from "@/partials/Testimonial.astro";
 import Features from "@/partials/Features.astro";
+import Testimonial from "@/partials/Testimonial.astro";
 import type { About } from "@/types";
 
 const about = await getListPage("about", "-index");
 const aboutData: About = about.data;
 ---
 
-<Base
-  title={aboutData.title}
-  meta_title={aboutData.meta_title}
-  description={aboutData.description}
->
+<Base {...aboutData}>
   <!-- Page Header -->
   <section class="section-ph pb-20 overflow-hidden">
     <div class="container">

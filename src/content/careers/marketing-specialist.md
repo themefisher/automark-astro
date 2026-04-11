@@ -2,6 +2,7 @@
 title: "Marketing Specialist"
 meta_title: "Marketing Specialist - Automark Careers"
 description: "Develop and execute marketing campaigns that drive growth and engage our target audience."
+image: ""
 type: "Full time"
 location: "California"
 banner_image: "/images/careers/career-details-banner.png"

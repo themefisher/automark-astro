@@ -1,12 +1,12 @@
 ---
+import Share from "@/components/Share.astro";
 import Base from "@/layouts/Base.astro";
 import BlogCard from "@/layouts/components/BlogCard.astro";
 import ImageMod from "@/layouts/components/ImageMod.astro";
-import { render } from "astro:content";
 import { getSinglePage } from "@/lib/contentParser.astro";
-import { markdownify } from "@/lib/utils/textConverter";
 import dateFormat from "@/lib/utils/dateFormat";
-import Share from "@/components/Share.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getSinglePage("blog");
@@ -25,11 +25,7 @@ const allPosts = await getSinglePage("blog");
 const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 ---
 
-<Base
-  title={postData.title}
-  meta_title={postData.meta_title ?? postData.title}
-  description={postData.description ?? ""}
->
+<Base {...postData}>
   <!-- Blog Single Hero -->
   <section class="section-ph relative pb-10 lg:pb-14">
     <div class="container">
@@ -109,8 +105,13 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
         <!-- Share -->
         <div class="flex flex-wrap items-center gap-6 md:gap-8">
-          <h4 class="text-h5 md:text-h4 mb-0">Share article:</h4>
-          <Share className="social-icons" />
+          <h4 class="text-h5 md:text-h4 mb-0">Share:</h4>
+          <Share
+            className="social-icons"
+            slug={post.id}
+            title={postData.title}
+            description={postData.description}
+          />
         </div>
       </div>
     </div>

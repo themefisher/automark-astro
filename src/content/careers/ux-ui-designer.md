@@ -2,6 +2,7 @@
 title: "UX/UI Designer"
 meta_title: "UX/UI Designer - Automark Careers"
 description: "Create intuitive user experiences and beautiful interfaces for our growing product suite."
+image: ""
 type: "Full time"
 location: "Remote"
 banner_image: "/images/careers/career-details-banner.png"

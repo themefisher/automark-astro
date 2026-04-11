@@ -12,11 +12,7 @@ const pricing = await getListPage("pricing", "-index");
 const pricingData: Pricing = pricing.data;
 ---
 
-<Base
-  title={pricingData.title}
-  meta_title={pricingData.meta_title}
-  description={pricingData.description}
->
+<Base {...pricingData}>
   <!-- Page Header -->
   <section class="section-ph pb-0 relative overflow-hidden">
     <div class="container relative">

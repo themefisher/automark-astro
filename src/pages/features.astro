@@ -1,7 +1,8 @@
 ---
-import BusinessNeeds from "@/layouts/components/BusinessNeeds.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
 import Base from "@/layouts/Base.astro";
 import BrandsCarousel from "@/layouts/components/BrandsCarousel.astro";
+import BusinessNeeds from "@/layouts/components/BusinessNeeds.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
 import ComparisonRow from "@/layouts/components/ComparisonRow.astro";
 import Faq from "@/layouts/components/Faq.astro";
@@ -11,17 +12,12 @@ import ShowcaseCard from "@/layouts/components/ShowcaseCard.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { Features } from "@/types";
-import DynamicIcon from "@/helpers/DynamicIcon";
 
 const features = await getListPage("features", "-index");
 const featuresData: Features = features.data;
 ---
 
-<Base
-  title={featuresData.title}
-  meta_title={featuresData.meta_title}
-  description={featuresData.description}
->
+<Base {...featuresData}>
   <!-- Banner -->
   <section class="section-ph relative overflow-hidden pb-20">
     <div class="container relative">
@@ -131,7 +127,10 @@ const featuresData: Features = features.data;
                     {feature.items.map((item: any) => (
                       <article>
                         <div class="size-10 rounded-xl bg-white/6 border border-border grid place-items-center mb-4">
-                          <DynamicIcon icon={item.icon} className="text-text-light text-lg" />
+                          <DynamicIcon
+                            icon={item.icon}
+                            className="text-text-light text-lg"
+                          />
                         </div>
                         <h3 class="text-h5-sm font-bold text-white mb-2">
                           {item.title}

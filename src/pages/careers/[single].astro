@@ -1,13 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro";
-import ImageMod from "@/layouts/components/ImageMod.astro";
-import CareerApplyForm from "@/layouts/components/CareerApplyForm.astro";
 import Badge from "@/layouts/components/Badge.astro";
-import Faq from "@/layouts/components/Faq.astro";
 import CallToAction from "@/layouts/components/CallToAction.astro";
-import { render } from "astro:content";
+import CareerApplyForm from "@/layouts/components/CareerApplyForm.astro";
+import Faq from "@/layouts/components/Faq.astro";
+import ImageMod from "@/layouts/components/ImageMod.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const jobs = await getSinglePage("careers");
@@ -22,11 +22,7 @@ const jobData = job.data;
 const { Content } = await render(job);
 ---
 
-<Base
-  title={jobData.title}
-  meta_title={jobData.meta_title ?? jobData.title}
-  description={jobData.description ?? ""}
->
+<Base {...jobData}>
   <!-- Page Header -->
   <section class="section-ph pb-8 relative overflow-hidden">
     <div class="container relative">

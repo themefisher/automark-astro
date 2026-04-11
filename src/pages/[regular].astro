@@ -20,16 +20,11 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const { title, meta_title, description, image } = page.data;
+const { title, description } = page.data;
 const { Content } = await render(page);
 ---
 
-<Base
-  title={title}
-  meta_title={meta_title}
-  description={description}
-  image={image}
->
+<Base {...page.data}>
   <PageHeader title={title} subtitle={description!} />
   <section class="section-sm">
     <div class="container">

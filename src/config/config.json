@@ -12,10 +12,7 @@
   },
 
   "settings": {
-    "sticky_header": true,
-    "pagination": 6,
-    "summary_length": 200,
-    "blog_folder": "blog"
+    "sticky_header": true
   },
 
   "params": {
@@ -31,7 +28,7 @@
   "navigation_button": {
     "enable": true,
     "label": "Get In Touch",
-    "link": "/contact"
+    "link": "https://themefisher.com/products/automark-astro"
   },
 
   "google_tag_manager": {
