@@ -10,7 +10,7 @@ import type { Contact } from "@/types";
 const contact = await getListPage("contact", "-index");
 const contactData: Contact = contact.data;
 const {
-  params: { contact_form_action },
+  params: { contact_form_action: _unused },
 } = config;
 ---
 
@@ -118,7 +118,7 @@ const {
         <!-- Right Column - Contact Form -->
         <div class="col-12 lg:col-7">
           <div class="p-8 md:p-10 bg-white/5 rounded-2xl">
-            <form action={contact_form_action} class="flex flex-col gap-10">
+            <form id="contact-form" novalidate class="flex flex-col gap-10">
               <div class="flex flex-col gap-5">
                 <div class="relative">
                   <input
@@ -158,26 +158,29 @@ const {
                 </div>
               </div>
               <div class="flex flex-col gap-6">
-                <div class="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="recaptcha-terms"
-                    required
-                    class="w-6 h-6 mt-0.5 rounded border-border bg-white/5 text-primary focus:ring-primary focus:ring-offset-0"
-                  />
-                  <label
-                    for="recaptcha-terms"
-                    class="text-text text-base leading-relaxed cursor-pointer"
-                  >
-                    This site is protected by reCAPTCHA and the Google Privacy
-                    Policy and Terms of Service apply.
-                  </label>
+                <!-- Status messages -->
+                <div
+                  id="form-success"
+                  class="hidden rounded-2xl bg-green-500/10 border border-green-500/30 px-6 py-4 text-green-400 text-base"
+                >
+                  ✅ Message sent! We'll be in touch shortly.
                 </div>
+                <div
+                  id="form-error"
+                  class="hidden rounded-2xl bg-red-500/10 border border-red-500/30 px-6 py-4 text-red-400 text-base"
+                >
+                  ⚠️ <span id="form-error-text"
+                    >Something went wrong. Please try again.</span
+                  >
+                </div>
+
                 <button
                   type="submit"
-                  class="btn btn-primary w-full py-4 text-lg font-medium"
+                  id="contact-submit"
+                  class="btn btn-primary w-full py-4 text-lg font-medium transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  <span id="submit-label">Send Message</span>
+                  <span id="submit-loading" class="hidden">Sending…</span>
                 </button>
               </div>
             </form>
@@ -193,3 +196,72 @@ const {
   <!-- Call to Action -->
   <CallToAction />
 </Base>
+
+<script>
+  const form = document.getElementById(
+    "contact-form",
+  ) as HTMLFormElement | null;
+  const submitBtn = document.getElementById(
+    "contact-submit",
+  ) as HTMLButtonElement | null;
+  const submitLabel = document.getElementById("submit-label");
+  const submitLoading = document.getElementById("submit-loading");
+  const successEl = document.getElementById("form-success");
+  const errorEl = document.getElementById("form-error");
+  const errorText = document.getElementById("form-error-text");
+
+  function setLoading(loading: boolean) {
+    if (!submitBtn || !submitLabel || !submitLoading) return;
+    submitBtn.disabled = loading;
+    submitLabel.classList.toggle("hidden", loading);
+    submitLoading.classList.toggle("hidden", !loading);
+  }
+
+  function showSuccess() {
+    successEl?.classList.remove("hidden");
+    errorEl?.classList.add("hidden");
+    form?.reset();
+  }
+
+  function showError(msg?: string) {
+    errorEl?.classList.remove("hidden");
+    successEl?.classList.add("hidden");
+    if (errorText && msg) errorText.textContent = msg;
+  }
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Hide previous status
+    successEl?.classList.add("hidden");
+    errorEl?.classList.add("hidden");
+
+    const formData = new FormData(form);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const json = await res.json().catch(() => ({}));
+
+      if (res.ok && json.success) {
+        showSuccess();
+      } else {
+        showError(json.error ?? "Something went wrong. Please try again.");
+      }
+    } catch {
+      showError("Network error — please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  });
+</script>
