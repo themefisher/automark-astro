@@ -66,9 +66,6 @@ export const POST: APIRoute = async ({ request }) => {
     email: email.trim(),
     phone: phone.trim(),
     tags: ["website-contact-form"],
-    ...(message.trim() && {
-      customFields: [{ key: "message", field_value: message.trim() }],
-    }),
   };
 
   try {
