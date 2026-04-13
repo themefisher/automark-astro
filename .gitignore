@@ -2,6 +2,7 @@
 dist/
 .output/
 .json/
+.vercel
 
 # dependencies
 node_modules/
