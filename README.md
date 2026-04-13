@@ -1,5 +1,5 @@
-<h1 align=center>Automark Astro</h1>
-<p align=center>Automark is a high-performance, premium Astro theme designed specifically for Marketing & Sales Automation platforms, featuring built-in GoHighLevel and Stripe integrations.
+<h1 align=center>Automark - Astro + GoHighLevel Website Template</h1>
+<p align=center> Automark is a high-end, feature-rich Astro theme specifically crafted for GoHighLevel White-Label SaaS resellers and agencies.
 </p>
 
 <h2 align="center"> 
@@ -23,19 +23,20 @@
 
 ![automark-astro](https://assets.teamosis.com/thumbs/automark.png)
 
-Automark is a beautifully designed, feature-rich Astro theme created for SaaS, marketing agencies, and automation service providers. It comes pre-integrated with **GoHighLevel** for CRM/Lead management and **Stripe** for subscription handling, allowing you to launch a complete sales funnel in minutes.
+While most resellers use the same stock templates, Automark gives you a modern, bespoke look to differentiate your brand. It comes pre-integrated with **GoHighLevel** for CRM/Lead management and **Stripe** for subscription handling, allowing you to launch a professional SaaS presence in minutes.
+
+The template is **Agent-Ready**, featuring a dedicated .agents/skills directory designed to work seamlessly with agentic IDEs like Antigravity, Cursor, VS Code, and Claude Code. It follows industry-leading patterns for Astro, GoHighLevel, and Stripe best practices, making it as easy for an AI agent to maintain as it is for a human.
 
 ## 🔑 Key Features
 
-- 📄 **10+ Conversion-Focused Pages** (Home, Features, Pricing, Case Studies, etc.)
-- 🔗 **Deep GoHighLevel Integration** (Leads, Contacts, Conversations, and Calendar booking)
-- 💰 **Stripe Subscription Suite** (Automated checkout sessions and GHL contact tagging via webhooks)
-- 🤖 **Marketing Automation** (Lead capture, automated routing, and follow-up sequences)
-- 📊 **Growth Optimization Tools** (A/B testing, funnel analytics, and behavior tracking)
-- ⚡ **Blazing Performance** (Built with Astro 6+ and Tailwind CSS 4 for near-perfect Lighthouse scores)
-- ✍️ **Content-First Design** (Markdown/MDX support for Blog, Careers, and Case Studies)
-- 🔍 **Enterprise SEO** (Automatic OG images, sitemap generation, and schema-friendly structure)
-- 📱 **Fully Responsive** (Optimized for all devices with premium dark-mode aesthetics)
+- 🤖 **Agentic IDE Support**: Pre-configured with .agents/skills for peak performance in Cursor, Antigravity, and Claude Code.
+- 📄 **10+ Conversion-Focused Pages**: (Home, Features, Pricing, Case Studies, etc.)
+- 🔗 **Deep GoHighLevel Integration**: (Leads, Contacts, Conversations, and Calendar booking)
+- 💰 **Stripe Subscription Suite**: (Automated checkout sessions and GHL contact tagging via webhooks)
+- ⚡ **Blazing Performance**: (Built with Astro 6+ and Tailwind CSS 4 for near-perfect Lighthouse scores)
+- ✍️ **Content-First Design**: (Markdown/MDX support for Blog, Careers, and Case Studies)
+- 🔍 **SEO-Friendly**: (Automatic OG images, sitemap generation, and schema-friendly structure)
+- 📱 **Fully Responsive**: (Optimized for all devices with premium dark-mode aesthetics)
 
 ## 📄 Pre-Designed Pages
 
